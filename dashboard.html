@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenArena Leaderboard (Powered by KaggleIngest)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        background-color: #0f1117;
+        color: #e2e8f0;
+        font-family: "Inter", sans-serif;
+      }
+      .card {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+      }
+    </style>
+  </head>
+  <body class="p-8">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1
+          class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+        >
+          OpenArena
+          <span class="text-sm text-gray-400 font-mono">Testnet Beta</span>
+        </h1>
+        <p class="text-gray-400">Decentralized Adversarial Evaluation</p>
+      </div>
+      <div class="flex gap-4">
+        <span
+          class="px-4 py-2 bg-green-900/30 text-green-400 rounded border border-green-800 animate-pulse"
+        >
+          ● Live Phase: Commit
+        </span>
+        <span class="px-4 py-2 bg-blue-600 rounded font-bold"
+          >Connect Wallet</span
+        >
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-gray-400 text-sm">Active Miners</h3>
+        <p class="text-2xl font-bold">256</p>
+      </div>
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-gray-400 text-sm">Current Epoch</h3>
+        <p class="text-2xl font-bold">#4,291</p>
+      </div>
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-gray-400 text-sm">Avg Generalization Score</h3>
+        <p class="text-2xl font-bold text-yellow-400">0.872</p>
+      </div>
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-gray-400 text-sm">Next Challenge</h3>
+        <p class="text-md font-mono text-purple-400">MATH::Polynomial_Roots</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Leaderboard -->
+      <div class="lg:col-span-2 card rounded-xl overflow-hidden">
+        <div class="p-6 border-b border-gray-700 flex justify-between">
+          <h2 class="text-xl font-bold">Live Generalization Leaderboard</h2>
+          <button class="text-sm text-blue-400 hover:text-blue-300">
+            View All
+          </button>
+        </div>
+        <table class="w-full text-left">
+          <thead class="bg-gray-800 text-gray-400">
+            <tr>
+              <th class="p-4">Rank</th>
+              <th class="p-4">Miner ID</th>
+              <th class="p-4">Score (G)</th>
+              <th class="p-4">Latency</th>
+              <th class="p-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body" class="divide-y divide-gray-700">
+            <!-- Rows will be injected here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Live Feed -->
+      <div class="card rounded-xl p-6">
+        <h2 class="text-xl font-bold mb-4">Live Activity Log</h2>
+        <div
+          id="activity-log"
+          class="space-y-3 font-mono text-sm max-h-[400px] overflow-y-auto"
+        >
+          <!-- Logs injected here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Start Mock Data Injection immediately
+      const miners = [
+        { id: "5H...x92", score: 0.982, lat: "45ms", status: "Verified" },
+        { id: "5C...k21", score: 0.941, lat: "120ms", status: "Verified" },
+        { id: "5D...j88", score: 0.81, lat: "410ms", status: "Verified" },
+        { id: "5K...m11", score: 0.0, lat: "-", status: "Slash (Copycat)" },
+      ];
+
+      const tbody = document.getElementById("leaderboard-body");
+      miners.forEach((m, i) => {
+        const row = `
+                <tr class="hover:bg-gray-800/50">
+                    <td class="p-4 font-bold text-gray-500">#${i + 1}</td>
+                    <td class="p-4 font-mono text-blue-300">${m.id}</td>
+                    <td class="p-4 font-bold ${m.score > 0.9 ? "text-green-400" : "text-gray-300"}">${m.score.toFixed(3)}</td>
+                    <td class="p-4 text-gray-400">${m.lat}</td>
+                    <td class="p-4">
+                        <span class="px-2 py-1 rounded text-xs ${m.score > 0 ? "bg-green-900 text-green-300" : "bg-red-900 text-red-300"}">
+                            ${m.status}
+                        </span>
+                    </td>
+                </tr>
+            `;
+        tbody.innerHTML += row;
+      });
+
+      // Mock Live Activity
+      const logs = document.getElementById("activity-log");
+      const actions = [
+        "Miner 5H...x92 committed hash 0x7f2...",
+        "Validator generated new task: 12 + 99",
+        "Miner 5C...k21 revealed answer: 111",
+        "Miner 5K...m11 penalized for late reveal",
+        "New Block Finalized #4392",
+      ];
+
+      actions.forEach((a, i) => {
+        setTimeout(() => {
+          const div = document.createElement("div");
+          div.className =
+            "p-2 bg-black/20 rounded border-l-2 border-blue-500 animate-fade-in";
+          div.innerHTML = `<span class="text-gray-500">[${new Date().toLocaleTimeString()}]</span> ${a}`;
+          logs.prepend(div);
+        }, i * 800);
+      });
+    </script>
+  </body>
+</html>

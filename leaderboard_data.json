@@ -1,0 +1,362 @@
+[
+  {
+    "epoch": 0,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.6000000000000001,
+    "latency": 0.1779961225778374
+  },
+  {
+    "epoch": 0,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.6000000000000001,
+    "latency": 0.2260547286770072
+  },
+  {
+    "epoch": 0,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.4,
+    "latency": 0.42816569126833437
+  },
+  {
+    "epoch": 0,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.4,
+    "latency": 0.3451018315649287
+  },
+  {
+    "epoch": 1,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.6800000000000002,
+    "latency": 0.13495944646620664
+  },
+  {
+    "epoch": 1,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.6800000000000002,
+    "latency": 0.3250927723571596
+  },
+  {
+    "epoch": 1,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.32000000000000006,
+    "latency": 0.2859713861665302
+  },
+  {
+    "epoch": 1,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.32000000000000006,
+    "latency": 0.17195844026448573
+  },
+  {
+    "epoch": 2,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.7440000000000002,
+    "latency": 0.4325155942340365
+  },
+  {
+    "epoch": 2,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.7440000000000002,
+    "latency": 0.48716244127292485
+  },
+  {
+    "epoch": 2,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.25600000000000006,
+    "latency": 0.16149136799756392
+  },
+  {
+    "epoch": 2,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.25600000000000006,
+    "latency": 0.11665523406938326
+  },
+  {
+    "epoch": 3,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.7952000000000001,
+    "latency": 0.382426105641567
+  },
+  {
+    "epoch": 3,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.7952000000000001,
+    "latency": 0.4896377972814958
+  },
+  {
+    "epoch": 3,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.20480000000000007,
+    "latency": 0.3756796340973141
+  },
+  {
+    "epoch": 3,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.20480000000000007,
+    "latency": 0.38800551035441666
+  },
+  {
+    "epoch": 4,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.8361600000000002,
+    "latency": 0.2412278643189834
+  },
+  {
+    "epoch": 4,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.8361600000000002,
+    "latency": 0.4437119138788751
+  },
+  {
+    "epoch": 4,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.16384000000000007,
+    "latency": 0.38899145174946836
+  },
+  {
+    "epoch": 4,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.16384000000000007,
+    "latency": 0.12554785344385355
+  },
+  {
+    "epoch": 5,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.8689280000000001,
+    "latency": 0.19372422866653294
+  },
+  {
+    "epoch": 5,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.8689280000000001,
+    "latency": 0.3085929276654661
+  },
+  {
+    "epoch": 5,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.13107200000000005,
+    "latency": 0.4115953267986575
+  },
+  {
+    "epoch": 5,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.13107200000000005,
+    "latency": 0.3290462563471851
+  },
+  {
+    "epoch": 6,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.8951424000000001,
+    "latency": 0.2683404735835466
+  },
+  {
+    "epoch": 6,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.8951424000000001,
+    "latency": 0.11966590829196573
+  },
+  {
+    "epoch": 6,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.10485760000000005,
+    "latency": 0.4144742142997404
+  },
+  {
+    "epoch": 6,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.10485760000000005,
+    "latency": 0.10067328064373814
+  },
+  {
+    "epoch": 7,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9161139200000001,
+    "latency": 0.1721770009561337
+  },
+  {
+    "epoch": 7,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9161139200000001,
+    "latency": 0.4787433436349503
+  },
+  {
+    "epoch": 7,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.08388608000000004,
+    "latency": 0.47276186860969693
+  },
+  {
+    "epoch": 7,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.08388608000000004,
+    "latency": 0.1264771865777375
+  },
+  {
+    "epoch": 8,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9328911360000001,
+    "latency": 0.3121905644720486
+  },
+  {
+    "epoch": 8,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9328911360000001,
+    "latency": 0.44482428780089145
+  },
+  {
+    "epoch": 8,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.06710886400000003,
+    "latency": 0.3185804104042277
+  },
+  {
+    "epoch": 8,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.06710886400000003,
+    "latency": 0.15638594507542708
+  },
+  {
+    "epoch": 9,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9463129088000002,
+    "latency": 0.2177532814190792
+  },
+  {
+    "epoch": 9,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9463129088000002,
+    "latency": 0.11530520382456128
+  },
+  {
+    "epoch": 9,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.05368709120000003,
+    "latency": 0.24314636902218467
+  },
+  {
+    "epoch": 9,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.05368709120000003,
+    "latency": 0.46758288691755945
+  },
+  {
+    "epoch": 10,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9570503270400001,
+    "latency": 0.20948750243262812
+  },
+  {
+    "epoch": 10,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9570503270400001,
+    "latency": 0.4454572161500582
+  },
+  {
+    "epoch": 10,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.042949672960000025,
+    "latency": 0.25394487540931704
+  },
+  {
+    "epoch": 10,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.042949672960000025,
+    "latency": 0.1790624583828751
+  },
+  {
+    "epoch": 11,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9656402616320001,
+    "latency": 0.18377145742195952
+  },
+  {
+    "epoch": 11,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9656402616320001,
+    "latency": 0.1959496593006459
+  },
+  {
+    "epoch": 11,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.03435973836800002,
+    "latency": 0.3710789184823503
+  },
+  {
+    "epoch": 11,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.03435973836800002,
+    "latency": 0.45599955391476843
+  },
+  {
+    "epoch": 12,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9725122093056002,
+    "latency": 0.35154369664265284
+  },
+  {
+    "epoch": 12,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9725122093056002,
+    "latency": 0.3065066657940856
+  },
+  {
+    "epoch": 12,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.027487790694400018,
+    "latency": 0.3003858490497625
+  },
+  {
+    "epoch": 12,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.027487790694400018,
+    "latency": 0.3788329503721992
+  },
+  {
+    "epoch": 13,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9780097674444803,
+    "latency": 0.2206317988769877
+  },
+  {
+    "epoch": 13,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9780097674444803,
+    "latency": 0.22989815868243246
+  },
+  {
+    "epoch": 13,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.021990232555520017,
+    "latency": 0.12718786633265966
+  },
+  {
+    "epoch": 13,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.021990232555520017,
+    "latency": 0.4671292434024441
+  },
+  {
+    "epoch": 14,
+    "miner": "Miner_Alphazero (Honest)",
+    "score": 0.9824078139555843,
+    "latency": 0.2403259208236556
+  },
+  {
+    "epoch": 14,
+    "miner": "Miner_GPT4 (Honest)",
+    "score": 0.9824078139555843,
+    "latency": 0.19853007674303635
+  },
+  {
+    "epoch": 14,
+    "miner": "Miner_Copycat (Malicious)",
+    "score": 0.017592186044416015,
+    "latency": 0.4391603429901778
+  },
+  {
+    "epoch": 14,
+    "miner": "Miner_Lazy (Random)",
+    "score": 0.017592186044416015,
+    "latency": 0.1323444746860719
+  }
+]
