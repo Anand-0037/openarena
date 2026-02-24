@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #fde047;
+  --color-brand-red: #ef4444;
+  --color-brand-blue: #3b82f6;
+  --color-brand-green: #22c55e;
+  --color-brand-light: #fbfbf8;
+  --color-brand-dark: #121212;
+}
+
+@layer base {
+  :root {
+    --background: #fbfbf8;
+    --foreground: #121212;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .brutal-border {
+    border: 3px solid #121212;
+  }
+
+  .brutal-shadow {
+    box-shadow: 6px 6px 0px #121212;
+  }
+
+  .brutal-shadow-hover {
+    transition: all 0.15s ease-in-out;
+  }
+
+  .brutal-shadow-hover:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #121212;
+  }
+
+  .brutal-shadow-hover:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #121212;
+  }
+
+  .brutal-card {
+    background-color: white;
+    border: 3px solid #121212;
+    box-shadow: 6px 6px 0px #121212;
+    border-radius: 0;
+  }
+}

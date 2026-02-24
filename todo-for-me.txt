@@ -1,0 +1,67 @@
+1. 🎥 Record and Upload the Videos (Critical Missing Piece)
+The HackQuest portal specifically highlights: "Please Upload Demo Video" and you need the 5-10 minute explanation video required by the Ideathon.
+
+Action: Open
+
+deliverables/video_script.md
+ (or
+
+openarena-video-script.md
+).
+Action: Record yourself presenting the pitch deck and doing a screen-share walkthrough of the
+
+demo.py
+ terminal output and
+
+dashboard.html
+ to prove the concept works.
+Action: Upload the video to YouTube (Unlisted) or Vimeo, and paste the link into the "Demo Video" and/or "Pitch Video" fields on HackQuest.
+2. 📤 Convert and Upload Documents
+The Ideathon requires the Proposal and Pitch Deck in PDF, Slides, Notion, or as a GitHub repo. You have all these written in Markdown.
+
+The Pitch Deck: Convert
+
+deliverables/pitch_deck.md
+ into a 10-slide PDF or Google Slides presentation. Upload this to the HackQuest platform.
+The Whitepaper/Proposal: Convert
+
+WHITE_PAPER.md
+ and/or
+
+openarena-proposal.md
+ into a clean PDF or Notion document and link it in the submission.
+3. 🐦 Publish the Public Introduction Post
+The rules state: "Short public introduction of the subnet idea on X (Twitter) or other public platforms."
+
+Action: Open
+
+deliverables/social_thread.md
+.
+Action: Post this thread on Twitter/X, tagging the relevant Bittensor accounts if specified.
+Action: Copy the URL of your published tweet and ensure it is included somewhere in your HackQuest submission or project description.
+4. 💻 Publish the GitHub Repository
+Having the code public adds massive credibility and satisfies the "GitHub repository" format option for the proposal.
+
+Action: You already have your .git initialized locally. Commit all your finalized files (
+
+INCENTIVE_MECHANISM.md
+,
+
+demo.py
+,
+
+dashboard.html
+, the openarena/ modules, etc.).
+Action: Push it to a public GitHub repository named OpenArena.
+Action: Add the GitHub repository link to the HackQuest project page.
+5. 🖼️ Finalize the HackQuest Project Page
+You have your text ready, just make sure the fields are maximally polished:
+
+Logo: Upload
+
+openarena_logo.png
+ as the project logo.
+Project Description: Paste the Markdown exactly as you have it in your prompt (The Problem, The Solution, The Unfair Advantage, Tech Stack).
+Fundraising Status: Keep it as "Not funded / Bootstrapped" just like you have it.
+Would you like me to help you format any of these documents into a more copy-pasteable layout for a specific platform (like Notion or a GitHub README), or do you want to start executing the Github push / Video recording?
+
