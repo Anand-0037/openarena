@@ -1,30 +1,66 @@
-# OpenArena: Video Explainer Script (5 Minutes)
+# OpenArena Ideathon Video Script (3-7 Minutes)
 
-**[0:00-0:45] The Hook: The Crisis of Trust**
-_(Visual: Glitchy footage of "State of the Art" models failing simple logic puzzles.)_
-"Every week, a new model claims 99% accuracy. But we all know the truth: They are memorizing the test. Benchmarks like GSM8K are static, leaked, and broken. We are measuring retrieval, not intelligence. And in a world of AI agents, that is dangerous."
+**Format:** Screen Recording + Voice-Over (Showing the OpenArena Next.js Website, Whitepaper, and KaggleIngest Integration)
+**Tone:** Confident, visionary, clear, and focused on the technical architecture.
 
-**[0:45-1:30] The Solution: OpenArena**
-_(Visual: Animated diagram of the OpenArena Loop. Tasks morphing shapes.)_
-"Enter OpenArena. The world's first Decentralized Adversarial Evaluation Protocol. We don't use a fixed test set. Instead, our Validators act as 'Game Masters,' generating fresh, mathematically verified challenges every single epoch. Real-time news summarization. Synthetic logic puzzles. Code obfuscation."
+---
 
-**[1:30-2:30] The Mechanism: How It Works**
-_(Visual: Code overlay of the `Synapse` protocol and Commit-Reveal flow.)_
-"To win, a Miner must generalize. But they must also play fair. We've implemented a robust **Commit-Reveal Mechanism** directly on the Bittensor chain.
+### [0:00 - 0:45] 1. The Hook & Subnet Overview
 
-1. Miners solve the task.
-2. They commit a cryptographic hash of their answer and a secret salt.
-3. This prevents front-running. No one can steal your work.
-4. Only after the window closes is the truth revealed."
+_(Visual: Start on the OpenArena Homepage hero section showing the automated terminal animation.)_
 
-**[2:30-3:30] The Business Case: dTAO Flywheel**
-_(Visual: Spinning dTAO token and logos of AI Labs.)_
-"This isn't just a game. It's a product. 'Evaluation-as-a-Service.' massive AI labs need independent verification. In OpenArena, they pay in TAO to stress-test their models against our network. This creates a sustainable demand loop for the subnet token."
+**Voice-Over:**
+"Hello everyone, and welcome to OpenArena: Subnet X.
+Right now, the AI industry is facing a massive problem: Benchmark Saturation. As frontier models get smarter, they memorize static datasets like MMLU or HumanEval. It is becoming impossible to tell the difference between genuine reasoning intelligence, and simple data retrieval. Who validates the validators?
 
-**[3:30-4:30] The Secret Weapon: KaggleIngest**
-_(Visual: Screen recording of the KaggleIngest dashboard showing OpenArena stats.)_
-"And we have a secret weapon. We are integrating OpenArena into **KaggleIngest**. We are bringing the 15 million data scientists on Kaggle directly to Bittensor. One-click submission. Real-time leaderboards. A bridge between the best minds in data science and the best incentives in crypto."
+OpenArena solves this. We are the world's first decentralized, dynamic, adversarial AI evaluation protocol on Bittensor. Instead of static benchmarks, we evaluate AI on freshly generated, unseen problems in real-time."
 
-**[4:30-5:00] The Close**
-_(Visual: OpenArena Logo. "Join the Arena" text.)_
-"Static benchmarks are history. Real intelligence adapts. Support OpenArena in the Ideathon. Let the games begin."
+### [0:45 - 1:45] 2. Core Mechanism & Roles
+
+_(Visual: Scroll down to the "Mechanism Design" section on the homepage and hover over the interactive Mermaid architecture diagram.)_
+
+**Voice-Over:**
+"Here is how our subnet operates. The core mechanism involves two distinct roles: Validators and Miners.
+
+Validators act as 'Game Masters'. In every epoch, they pull from **LiveBench**—a continuously updating benchmark of verifiable, objective ground-truth questions. Because LiveBench regularly releases fresh, harder tasks across coding, math, and data analysis—while keeping newer questions completely private from public datasets—Validators guarantee zero data contamination.
+
+Miners act as 'Solvers'. They run their proprietary language models and autonomous agents, competing to solve these verifiable tasks before anyone else."
+
+### [1:45 - 2:45] 3. Incentives, Scoring & Reward Allocation
+
+_(Visual: Switch tabs to the Whitepaper page, specifically highlighting the "Generalization Score" Math formula that renders on the page.)_
+
+**Voice-Over:**
+"To ensure we are rewarding the right behavior, we engineered a specific incentive mechanism built around the 'Generalization Score'.
+
+This score is a function of Accuracy, Calibration, and Latency.
+First and foremost, accuracy is king. Did the miner produce the objectively correct solution?
+Second, calibration: did the miner correctly assess its own confidence level?
+And finally, latency serves as a tiebreaker for efficiency.
+
+The most capable models—the ones that generalize the best to completely unseen problems—capture the highest scores and earn the TAO emissions. This creates an evolutionary pressure for miners to build genuinely smarter reasoning architectures, not just faster retrieval systems."
+
+### [2:45 - 3:45] 4. Quality Control & Anti-Cheating
+
+_(Visual: Scroll down in the whitepaper to the 'Security and Anti-Gaming' section, highlighting the Commit-Reveal bullet points.)_
+
+**Voice-Over:**
+"To make this 'Proof of Intelligence' mathematically secure, we implement strict anti-cheating mechanisms.
+
+The biggest vulnerability in peer-to-peer solving is copying. To prevent 'lazy' miners from simply scraping the mempool for correct answers published by smarter competitors, we use a cryptographic Commit-Reveal scheme. Miners must commit a hash of their solution before revealing the plaintext payload.
+
+Coupled with strict timeouts and procedural generation that prevents overfitting, OpenArena ensures that only genuine computational effort and actual intelligence are rewarded."
+
+### [3:45 - 4:45] 5. Go-To-Market & The Implementation Plan
+
+_(Visual: Switch to a preview of the 10-page Pitch Deck or the deployed KaggleIngest integration showcasing a live leaderboard mockup.)_
+
+**Voice-Over:**
+"What makes OpenArena a viable business? We are integrating this protocol directly with our existing platform, KaggleIngest. By exposing the real-time OpenArena 'Generalization Leaderboard' to thousands of data scientists, we create immediate, overwhelming demand for this zero-shot evaluation standard.
+
+Our Implementation Plan for Round II is straightforward:
+In Phase 1, we will launch our 'Stub' Subnet on the Testnet with simulated miners.
+In Phase 2, we will harden the Commit-Reveal mechanism across the network.
+In Phase 3, we will connect the live decentralized consensus directly to our KaggleIngest frontend dashboard.
+
+Thank you for watching. OpenArena isn't just a benchmark—it's the crucible where true intelligence is proven. We look forward to seeing you on the testnet."

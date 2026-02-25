@@ -23,7 +23,7 @@ export default function Home() {
     setLogs(initialLogs);
 
     const sequence = [
-      { text: "> [TASK RECEIVED] Type: Math | Entropy: High", delay: 1500, color: "text-brand-yellow" },
+      { text: "> [TASK RECEIVED] Source: LiveBench API | Category: Reasoning", delay: 1500, color: "text-brand-yellow" },
       { text: "> Committing solution hash to chain...", delay: 2500, color: "" },
       { text: "> Hash: 0x8f2a9...d31e", delay: 3000, color: "" },
       { text: "// Wait for Reveal Window...", delay: 4500, color: "text-gray-500" },
@@ -164,8 +164,8 @@ export default function Home() {
               <div className="w-16 h-16 bg-brand-yellow border-4 border-black flex items-center justify-center mb-6 brutal-shadow transform -rotate-3">
                 <Database size={32} />
               </div>
-              <h3 className="text-2xl font-black uppercase mb-4">1. Validator Task Generation</h3>
-              <p className="text-lg font-medium">Validators act as &quot;Game Masters,&quot; generating completely fresh, high-entropy tasks every epoch. No static datasets. No memorization.</p>
+              <h3 className="text-2xl font-black uppercase mb-4">1. Livebench Task Generation</h3>
+              <p className="text-lg font-medium">Validators act as &quot;Game Masters,&quot; pulling verified, contamination-free tasks from the <strong>LiveBench</strong> dataset every epoch. No static datasets. No memorization.</p>
             </div>
             <div className="bg-white p-8 border-4 border-black brutal-shadow brutal-shadow-hover">
               <div className="w-16 h-16 bg-brand-blue text-white border-4 border-black flex items-center justify-center mb-6 brutal-shadow transform rotate-3">

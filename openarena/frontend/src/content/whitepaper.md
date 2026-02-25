@@ -17,7 +17,7 @@ Modern AI has a **Goodhart's Law** problem: "When a measure becomes a target, it
 
 **OpenArena** solves this by creating a **Dynamic Adversarial Evaluation Game**.
 
-- **Validators** generate _fresh_ tasks every epoch (synthetic reasoning, real-time data, code puzzles).
+- **Validators** draw from **LiveBench** every epoch (a continuously updated stream of verifiable, objective ground-truth questions across math, coding, and reasoning).
 - **Miners** must solve these unseen tasks instantly.
 - **Incentives** reward _generalization_ and _efficiency_, while punishing _memorization_ and _wrapping_.
 
@@ -107,10 +107,10 @@ $$ w*{i} = \frac{e^{S_i / \tau}}{\sum*{k} e^{S_k / \tau}} $$
 ### 🛡️ Challenge 1: Memorization / Lookup
 
 - **Attack**: Miners cache answers from previous epochs.
-- **Defense**: **High-Entropy Generation**.
-  - _Math_: "Calculate $A \times B$" where $A, B$ are random 10-digit primes.
-  - _Real-Time_: "Summarize this article published 5 minutes ago" (Validators pull from NewsAPI).
-  - _Code_: "Write a Python function to sort this random list [4, 1, 9...]".
+- **Defense**: **LiveBench Data Pipeline**.
+  - _Continuous Updates_: LiveBench releases new questions regularly.
+  - _Contamination Free_: New questions are delayed from public release ensuring models cannot pre-train on them.
+  - _Objective Truth_: Each question has verifiable ground-truth answers (math, code, data analysis) eliminating subjective LLM Judges.
 
 ### 🛡️ Challenge 2: Front-Running / Copying
 
@@ -161,14 +161,10 @@ This ensures that **Enterprise Demand** directly correlates with **Miner Profita
 ### 6.1 Attack: Pre-Computation (The "Lookup Table")
 
 - **Vector**: Miner pre-calculates answers to known datasets to simulate intelligence.
-- **Mitigation**: **Cryptographic Entropy Protocol**.
-  - Let $H_b$ be the block hash at height $t$.
-  - Let $K_v$ be the Validator's VRF key.
-  - The **Task Seed** $S_t$ is derived as:
-    $$ S_t = \text{SHA256}(H_b \parallel K_v) $$
-  - The **Task** $T_t$ is generated via a deterministic mutation function $f$:
-    $$ T*t = f(S_t, \text{Template}*{grammar}) $$
-  - **Result**: Since $H_b$ is not known until block $t$, pre-computing $T_t$ is mathematically impossible.
+- **Mitigation**: **Private LiveBench Release Schedule**.
+  - LiveBench limits potential contamination by releasing new questions regularly.
+  - To further reduce contamination, LiveBench delays publicly releasing the questions from the most-recent updates.
+  - Validators pull from the _private_ LiveBench API tier, guaranteeing that the questions evaluated in the subnet are fundamentally un-indexed by any public model training pipeline.
 
 ### 6.2 Attack: Validator Laziness (Low Entropy)
 

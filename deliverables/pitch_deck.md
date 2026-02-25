@@ -1,107 +1,116 @@
-# OpenArena: The Pitch Deck
+# OpenArena Pitch Deck (10 Slides)
 
-**Target Audience:** Bittensor Ideathon Judges & VC Investors
-**Theme:** Neo-Brutalist, High Contrast, Urgent.
+## Slide 1: Title Slide
 
----
-
-## Slide 1: The Hook
-
-**Visual:** A split screen. Left: A robot reciting a dictionary (Static). Right: A robot navigating a shifting maze (Dynamic).
-**Headline:** Static Benchmarks Are Dead.
-**Sub-headline:** Introducing OpenArena: The First Decentralized Adversarial Evaluation Protocol.
-**Speaker Notes:** "We are currently flying blind. We can no longer distinguish between a model that _remembers_ and a model that _thinks_. OpenArena is the solution."
+**Headline:** OpenArena (Subnet)
+**Sub-headline:** The Decentralized Adversarial AI Evaluation Protocol
+**Visual:** OpenArena Neo-Brutalist Logo, Bittensor Logo
+**Presenter:** [Your Name / Team Name]
+**Tagline:** Moving beyond benchmark saturation to measure real intelligence.
 
 ---
 
-## Slide 2: The Crisis (Market Problem)
+## Slide 2: The Problem Context
 
-**Visual:** A graph showing GSM8K scores hitting 95% saturation while "Real World Reliability" flatlines. Verified examples of "Data Contamination" (models completing test questions they shouldn't know).
-**Headline:** The $10B Evaluation Gap.
-**Core Stat:** "Goodhart's Law: When a measure becomes a target, it ceases to be a good measure."
-**Speaker Notes:** "Every major lab is overfitting. MMLU is leaked. We need a test that changes every single day."
+**Headline:** AI Benchmarks are Saturated
+**Bullet Points:**
 
----
-
-## Slide 3: The Solution (OpenArena)
-
-**Visual:** The "Infinite Loop" of OpenArena.
-
-1. **Validator** generates _fresh_ entropy (News, Math, Code).
-2. **Miner** generalizes instantly.
-3. **Score** assigned for adaptability.
-   **Headline:** Proof of Generalization.
-   **Value Prop:** "We don't test what you know. We test how fast you can learn."
+- **Memorization vs. Generalization:** Frontier models easily "solve" static datasets (like GSM8K or MMLU), making it impossible to tell if they are thinking or just retrieving.
+- **Data Contamination:** Public evaluation data inevitably leaks into training sets. A model scoring 99% today might just have the test key.
+- **The Bottleneck:** We cannot improve AI capability unless we have a reliable, un-gameable, continuous way to measure it.
 
 ---
 
-## Slide 4: The Mechanism (Adversarial Hardening)
+## Slide 3: The OpenArena Solution
 
-**Visual:** Deep dive into the **Commit-Reveal** architecture.
+**Headline:** Dynamic Adversarial Evaluation
+**Bullet Points:**
 
-- Diagram showing `SHA256(Answer + Salt + Hotkey)`.
-- A "Cheater" miner trying to copy-paste a hash and getting rejected.
-  **Headline:** Uncheatable by Design.
-  **Key Tech:**
-- **Commit-Reveal:** Prevents front-running/weight-stealing.
-- **Flash Challenges:** <200ms tasks to kill API wrappers.
-- **Yuma Consensus:** Decentralized truth.
+- **Dynamic Puzzles:** Evaluating AI on freshly generated, unseen tasks, rather than static datasets.
+- **Decentralized Verification:** A competitive subnet where validators act as adversarial task-generators.
+- **True Measurement:** We replace static benchmarking with real-time, zero-shot Generalization scoring.
 
 ---
 
-## Slide 5: The Business Model (The dTAO Flywheel)
+## Slide 4: Subnet Overview & Value Prop
 
-**Visual:** A flywheel diagram.
+**Headline:** What OpenArena Does & Why It Matters
+**Text:** OpenArena is a Bittensor subnet where AI models compete in real-time to solve novel, non-static challenges.
+**Who is it for?**
 
-1. **Demand:** Anthropic/OpenAI pay TAO to act as "Red Teamers".
-2. **Action:** OpenArena Validators attack their models with adversarial prompts.
-3. **Result:** Certified "Generalization Score".
-4. **Value:** TAO burned/staked -> Subnet Value Increases.
-   **Headline:** Evaluation-as-a-Service.
-   **Speaker Notes:** "We turn 'Red Teaming' from a cost center into a decentralized commodity."
-
----
-
-## Slide 6: The Unfair Advantage (KaggleIngest)
-
-**Visual:** Screenshot of the **KaggleIngest** Dashboard with an "OpenArena" tab.
-
-- Shows "Live Leaderboard" with familiar UI.
-- "One-Click Submit" from Kaggle Notebooks.
-  **Headline:** The Bridge from Web2 to Web3.
-  **Key Point:** "We are not starting from zero. We are onboarding the 15M+ data scientists from Kaggle directly into the Bittensor ecosystem."
+- **AI Builders/Researchers:** Needing reliable, contamination-free capability tracking.
+- **Enterprises:** Requiring absolute proof of a model's logical reasoning before deployment.
+  **Why it matters:** It establishes the gold standard for "Proof of Intelligence."
 
 ---
 
-## Slide 7: The Roadmap (Execution)
+## Slide 5: Core Mechanism & Roles
 
-**Visual:** Timeline.
+**Headline:** The OpenArena Ecosystem
+**Visual:** High-level Architect Flow (Mermaid Diagram style)
+**Roles:**
 
-- **Now:** Whitepaper & Protocol Design (Done).
-- **Round II:** "Stub" Subnet (Simulated Miners).
-- **Q3 2026:** Mainnet Launch + Kaggle Integration.
-  **Headline:** From Idea to Standard.
-
----
-
-## Slide 8: The Team
-
-**Visual:** Headshots with "Kaggle Grandmaster" and "Blockchain Dev" badges.
-**Headline:** Builders who know the Arena.
-**Bio:** "We combine deep ML expertise with crypto-native mechanism design."
+- **Validators (Game Masters):** Draw from the **LiveBench** dataset—a continuously updating stream of verifiable, objective ground-truth questions. Because LiveBench regularly releases fresh, uncontaminated tasks across coding, math, and data analysis, Validators guarantee miners are evaluated on novel problems.
+- **Miners (Solvers):** Operate LLMs and proprietary reasoning agents competing to solve the Validators' tasks first.
+  **Task Flow:** Assign → Commit Solution → Reveal Solution → Validate → Score & Reward.
 
 ---
 
-## Slide 9: The Ask
+## Slide 6: Incentives & Scoring Formula
 
-**Visual:** OpenArena Logomark.
-**Headline:** Help Us Kill Static Benchmarks.
-**Call to Action:** "Support OpenArena in the Ideathon. Let's build the Truth Machine."
+**Headline:** The Generalization Score
+**Text:** We incentivize intelligence, not just speed or rote recall.
+**The Formula:**
+`Score = (Accuracy × α) × (Calibration × β) - (Latency × γ)`
+
+- **Accuracy (Correctness):** Did the model get the objectively correct answer? (Highest weight).
+- **Calibration (Confidence):** Did the model properly assess its own certainty?
+- **Latency (Speed):** A tiebreaker designed to reward efficient reasoning architectures.
+  _Miners who generalize best across diverse, unseen tasks capture the majority of TAO emissions._
 
 ---
 
-## Slide 10: Appendix (Technical Specs)
+## Slide 7: Quality Control & Anti-Cheating
 
-**Visual:** The Scoring Function Equation.
-$$ S = (Accuracy \times Novelty) - Latency $$
-**Headline:** The Math of Intelligence.
+**Headline:** Bulletproof Adversarial Robustness
+**Bullet Points:**
+
+- **Cryptographic Commit-Reveal Scheme:** Miners must submit a hash of their answer before revealing the plaintext. This mathematically prevents "lazy" miners from copying answers from the mempool.
+- **Procedural Freshness:** Tasks are guaranteed unique per epoch. Overfitting is impossible.
+- **Yuma Consensus:** Validator scores are aggregated and cross-checked on-chain, preventing rogue validators from favoring specific miners.
+- **Spam Sybil Defenses:** Strict timeouts and response format requirements auto-reject low-effort or automated noise.
+
+---
+
+## Slide 8: "Proof of Intelligence"
+
+**Headline:** Why This is True Proof of Intelligence
+**Text:** OpenArena doesn't just measure compute ("Proof of Work") or stake ("Proof of Stake").
+**The Argument:**
+
+- By evaluating miners against the **LiveBench** dataset—where tasks are verified, updated continuously, and kept out of public training data—miners cannot rely on pre-trained memory.
+- Success here strictly correlates with advanced reasoning, logical deduction, and zero-shot capability.
+- The _effort_ is the computational reasoning required; the _intelligence_ is the generalization.
+
+---
+
+## Slide 9: Go-To-Market & Ecosystem Integration
+
+**Headline:** KaggleIngest as the Ultimate Frontend
+**Bullet Points:**
+
+- **The Integration:** We are integrating OpenArena with **KaggleIngest**, providing a massive, existing user base of data scientists and ML engineers a window into the Bittensor ecosystem.
+- **Real-Time Leaderboard:** A beautiful, neo-brutalist public dashboard tracking the smartest open-source models dynamically.
+- **Flywheel Effect:** Better evaluation brings better models -> better models bring enterprise demand -> enterprise demand drives TAO utility.
+
+---
+
+## Slide 10: Implementation Plan (Round II Hackathon)
+
+**Headline:** Milestones to Mainnet
+**Bullet Points:**
+
+- **Phase 1: The "Stub" Subnet (Testnet MVP):** Implement the core Validator-Miner loop with fundamental math/logic generation.
+- **Phase 2: Commit-Reveal Integration:** Deploy the cryptographic anti-collusion layer on the testnet.
+- **Phase 3: Dashboard Release:** Launch the live KaggleIngest-integrated frontend connecting directly to the Testnet subnet state.
+  **Wrap up:** "Let's build the arena where true AGI is forged."
