@@ -174,3 +174,6 @@ Chinmay Hegde2,Yann LeCun2,Tom Goldstein4,Willie Neiswanger5,Micah Goldblum2
 1Abacus.AI,2NYU,3Nvidia,4UMD,5USC
 This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 The site was inspired by the Nerfies project and by LiveCodeBench."
+
+Record the video	~60 min	Use the script in deliverables/video_script.md. Run python demo.py live. Upload unlisted to YouTube.
+Submit on HackQuest	~10 min	Use the GitHub link, PROPOSAL.md PDF, pitch deck PDF, YouTube link, and tweet link.
