@@ -1,85 +1,128 @@
-# OpenArena: The Coliseum of Intelligence
+# OpenArena: Decentralized Adversarial AI Evaluation Protocol
 
-![OpenArena Logo](openarena_logo.png)
+[License: MIT](https://opensource.org/licenses/MIT)
+[Bittensor Subnet](https://bittensor.com/)
 
-> **"The only true measure of intelligence is the ability to adapt to the unknown."**
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Bittensor](https://img.shields.io/badge/Bittensor-Subnet-blue)](https://bittensor.com/)
+**Live Demo**: [https://openarena.kaggleingest.com](https://openarena.kaggleingest.com)
+**Whitepaper**: [https://openarena.kaggleingest.com/whitepaper](https://openarena.kaggleingest.com/whitepaper)
+**GitHub**: [https://github.com/Anand-0037/openarena](https://github.com/Anand-0037/openarena)
 
 ---
 
-## 🏛️ Overview
+## Overview
 
-**Live Demo**: [https://openarena.kaggleingest.com](https://openarena.kaggleingest.com)
+OpenArena is a decentralized, adversarial benchmarking platform built on the Bittensor network. It addresses the critical issue of "Benchmark Saturation" in artificial intelligence by moving beyond static, public datasets that frontier models easily memorize.
 
-**OpenArena** is a decentralized, adversarial benchmarking platform built on **Bittensor**. It solves the "Crisis of Evaluation" in AI by moving beyond static datasets (which models memorize) to dynamic, human-generated challenges.
+Instead of measuring retrieval, OpenArena measures genuine reasoning capability through **Proof of Intelligence**. Miners are ranked by their ability to generalize to novel, uncontaminated, high-complexity problems generated in real-time.
 
-We introduce **Proof of Intelligence (PoI)**: A mechanism where miners are ranked not by their ability to answer fixed questions, but by their ability to generalize to novel, high-complexity problems submitted by the world's best data scientists via **KaggleIngest**.
+## Core Innovations
 
-## 🚀 Key Features
+- **LiveBench Integration**: Validators source tasks from the LiveBench dataset, a continuously updating stream of verifiable, objective questions across coding, mathematics, and data analysis. This guarantees zero data contamination and prevents model overfitting.
+- **KaggleIngest Portal**: A massive distribution bridge onboarding millions of data scientists from Kaggle directly into the OpenArena ecosystem, solving the cold-start problem for subnet liquidity.
+- **Generalization Score**: A rigorous mathematical scoring rule that evaluates Accuracy, Calibration (penalizing hallucinations), and Latency.
+- **Cryptographic Commit-Reveal**: A mathematically secure mechanism preventing front-running and plagiarism amongst miners in the peer-to-peer mempool.
 
-- **Dynamic Evaluation**: Challenges are constantly evolving, preventing overfitting and memorization.
-- **KaggleIngest Portal**: Exclusive bridge onboarding 15M+ Kaggle data scientists to monetize their expertise by breaking models.
-- **Brier Score Calibration**: A rigorous scoring rule that penalizes hallucinations. Miners must know what they don't know.
-- **Commit-Reveal Mechanism**: Cryptographically secure protocol to prevent front-running and plagiarism.
+## System Architecture
 
-## 🛠️ Architecture
+The protocol operates on a continuous epoch loop between Validators and Miners, orchestrated by the Bittensor chain.
 
-### The Arena (Validator)
+```mermaid
+graph TD
+    classDef validator fill:#fdfcfb,stroke:#000000,stroke-width:2px,color:#000000
+    classDef miner fill:#fdfcfb,stroke:#000000,stroke-width:2px,color:#000000
+    classDef data fill:#fdfcfb,stroke:#000000,stroke-width:2px,color:#000000,stroke-dasharray: 5 5
+    classDef chain fill:#fdfcfb,stroke:#000000,stroke-width:4px,color:#000000,font-weight:bold
 
-The Validator acts as the "Gamemaster," orchestrating the flow of challenges and verifying the integrity of the competition.
+    LB[(LiveBench API)]:::data -->|Private Task Stream| VAL(Validator):::validator
+    KI[(KaggleIngest Portal)]:::data -->|Enterprise & Player Tasks| VAL
 
-- **Entropy Source**: Derivates unpredictability from on-chain block hashes.
-- **Scoring Engine**: Implements the Brier Score decomposition for accuracy and calibration.
+    VAL -->|1. Broadcast Encrypted Prompt| NET((Bittensor Network)):::chain
 
-### The Gladiator (Miner)
+    NET -->|2. Route to Miner Pool| MINER_A(Miner A):::miner
+    NET -->|2. Route to Miner Pool| MINER_B(Miner B):::miner
 
-Miners are the AI models entering the arena.
+    MINER_A -->|3. Commit SHA-256 Hash| VAL
+    MINER_B -->|3. Commit SHA-256 Hash| VAL
 
-- **Adaptive Inference**: Leverages state-of-the-art LLMs (Llama 3, Mistral, GPT-4o) to solve reasoning tasks.
-- **Self-Correction**: Internal loops to verify answers before commitment.
+    MINER_A -.->|Wait for Reveal Window| MINER_A
 
-## ⚡ Quick Start
+    MINER_A -->|4. Reveal Plaintext| VAL
+    MINER_B -->|4. Reveal Plaintext| VAL
+
+    VAL -->|5. Compute Generalization Score| VAL
+    VAL -->|6. Set Weights| CHAIN[(Bittensor Blockchain)]:::chain
+```
+
+## Protocol Mechanics
+
+### 1. The Validator (Task Generation & Scoring)
+
+Validators act as the objective truth-seekers in the network. Every epoch, they pull a fresh, unseen prompt from the LiveBench API and broadcast it to the subnet. Once the reveal window closes, the Validator scores the submitted plaintext results against the objective ground truth.
+
+### 2. The Miner (Inference & Generalization)
+
+Miners operate state-of-the-art Large Language Models and proprietary reasoning agents. To participate, a miner must solve the validator's prompt and instantly commit a cryptographic hash of their solution to the network. This ensures computational effort is expended before the answer is revealed.
+
+### 3. The Generalization Score
+
+The subnet incentivizes true intelligence through a multi-variate reward function:
+`Score = (Accuracy * Alpha) * (Calibration * Beta) - (Latency * Gamma)`
+
+This scoring function strictly penalizes uncalibrated guesses (hallucinations) while rewarding models that combine high accuracy with self-awareness of their own confidence levels.
+
+## Quick Start
 
 ### Prerequisites
 
 - Python 3.10+
-- Bittensor
-- Torch & Transformers
+- Bittensor SDK
+- PyTorch & Transformers
+- Node.js & npm (for the frontend dashboard)
 
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/openarena.git
+# Clone the repository
+git clone https://github.com/Anand-0037/openarena.git
 cd openarena
+
+# Install Python dependencies
 pip install -r requirements.txt
 pip install -e .
+
+# Install Frontend dependencies
+cd openarena/frontend
+npm install
 ```
 
-### Running a Miner
+### Running the Local Simulation
+
+A built-in simulator is provided to demonstrate the Commit-Reveal mechanism and scoring without requiring a Bittensor localnet.
 
 ```bash
-python neurons/miner.py --netuid <your_netuid> --wallet.name <your_wallet> --wallet.hotkey <your_hotkey> --logging.debug
+# From the project root
+python demo.py
 ```
 
-### Running a Validator
+### Running the Web Dashboard
 
 ```bash
-python neurons/validator.py --netuid <your_netuid> --wallet.name <your_wallet> --wallet.hotkey <your_hotkey> --logging.debug
+cd openarena/frontend
+npm run dev
+# The dashboard will be available at http://localhost:3000
 ```
 
-## 📜 Roadmap
+## Roadmap
 
-- [x] **Phase 1: Foundation**: Core Commit-Reveal Protocol, Basic Scoring.
-- [ ] **Phase 2: The Bridge**: KaggleIngest Integration & Bounty Smart Contracts.
-- [ ] **Phase 3: The Coliseum**: 3D Visualization of Model Battles.
-- [ ] **Phase 4: AGI**: Recursive Self-Improvement Loops.
+- **Phase 1: Architecture & Simulation**: Core Commit-Reveal Protocol, Brier Scoring design, frontend dashboard. (Completed - Ideathon Round I)
+- **Phase 2: Testnet Deployment**: Deploying the Validator and Miner logic to the Bittensor testnet, integrating direct LiveBench API calls.
+- **Phase 3: The KaggleIngest Bridge**: Launching the live web application integrating the Kaggle user base.
+- **Phase 4: Mainnet Launch**: Transitioning to emissions and full decentralization.
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ---
 
-**Built for the Bittensor Ideathon 2026.**
+Built for the Bittensor Ideathon 2026.
