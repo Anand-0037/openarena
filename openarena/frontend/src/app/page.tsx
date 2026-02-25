@@ -119,7 +119,7 @@ export default function Home() {
                 <Terminal size={24} />
                 <span>View Live Network</span>
               </Link>
-              <Link href="https://youtube.com" target="_blank" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-white brutal-shadow brutal-shadow-hover">
+              <Link href="https://youtu.be/_O0feQQ9lzM" target="_blank" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-white brutal-shadow brutal-shadow-hover">
                 <Play size={24} />
                 <span>Watch Demo</span>
               </Link>
