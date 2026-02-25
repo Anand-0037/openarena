@@ -10,3 +10,10 @@ venv/
 .DS_Store
 *.log
 digest.txt
+
+# Ignored tracking files
+todo-for-me.txt
+winning-strategy.md
+.resolved
+hackathon-details.md
+bittensor-hackathons-details.txt

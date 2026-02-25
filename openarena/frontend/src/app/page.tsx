@@ -99,6 +99,10 @@ export default function Home() {
             <div className="inline-block px-4 py-2 bg-brand-yellow border-4 border-black font-bold mb-6 brutal-shadow rotate-1 transform">
               #1 BITTENSOR IDEATHON SUBMISSION
             </div>
+            <div className="mb-6 border-4 border-black p-4 bg-brand-blue text-white brutal-shadow transform -rotate-1">
+               <p className="font-bold text-lg md:text-xl uppercase">OpenArena — Live Bittensor Ideathon Submission</p>
+               <p className="font-medium mt-2 text-md">Powered by <span className="font-black bg-brand-yellow text-black px-1 py-0.5">LiveBench-2026-01-08</span> (private delayed questions) + KaggleIngest</p>
+            </div>
             <h1 className="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tighter uppercase relative">
               The Truth <br />
               <span className="text-white text-shadow-solid relative inline-block">
@@ -118,6 +122,10 @@ export default function Home() {
               <Link href="https://youtube.com" target="_blank" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-white brutal-shadow brutal-shadow-hover">
                 <Play size={24} />
                 <span>Watch Demo</span>
+              </Link>
+              <Link href="#network" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-brand-yellow text-black brutal-shadow brutal-shadow-hover">
+                <Cpu size={24} />
+                <span>Submit your miner</span>
               </Link>
             </div>
           </motion.div>

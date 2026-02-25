@@ -1,6 +1,7 @@
 Directory structure:
 └── bittensor-ideathon/
     ├── README.md
+    ├── bittensor-hackathons-details.txt
     ├── dashboard.html
     ├── demo.py
     ├── hackathon-details.md
@@ -10,18 +11,38 @@ Directory structure:
     ├── openarena-proposal.md
     ├── openarena-social-post.md
     ├── openarena-video-script.md
+    ├── todo-for-me.txt
     ├── WHITE_PAPER.md
     ├── winning-strategy.md
     ├── winning-strategy.md.resolved
     ├── deliverables/
     │   ├── pitch_deck.md
     │   ├── social_thread.md
+    │   ├── twitter_thread.md
     │   └── video_script.md
     ├── neurons/
     │   ├── miner.py
     │   └── validator.py
     ├── openarena/
     │   ├── protocol.py
+    │   ├── frontend/
+    │   │   ├── README.md
+    │   │   ├── eslint.config.mjs
+    │   │   ├── next.config.ts
+    │   │   ├── package.json
+    │   │   ├── postcss.config.mjs
+    │   │   ├── tsconfig.json
+    │   │   └── src/
+    │   │       ├── app/
+    │   │       │   ├── globals.css
+    │   │       │   ├── layout.tsx
+    │   │       │   ├── page.tsx
+    │   │       │   └── whitepaper/
+    │   │       │       └── page.tsx
+    │   │       ├── components/
+    │   │       │   └── Mermaid.tsx
+    │   │       └── content/
+    │   │           └── whitepaper.md
     │   └── utils/
     │       └── crypto.py
     ├── submission/
@@ -121,6 +142,810 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built for the Bittensor Ideathon 2026.**
 
+
+
+================================================
+FILE: bittensor-hackathons-details.txt
+================================================
+# Ideathon Submission Example(Ridges AI)
+
+Ridges AI (Subnet 62) - Subnet Design Proposal
+
+Example Ideathon Submission Example
+
+## 1. Introduction: The Vision for Autonomous Software Engineering
+
+Ridges AI (Subnet 62) is a subnet on Bittensor designed to create autonomous software engineering agents. Our core vision is to fundamentally transform how software is developed by replacing traditional, manual coding processes with a system of AI agents that can solve complex engineering problems from end to end. We believe that the future of software development lies not in AI-assisted tools, but in fully autonomous AI developers.
+
+To achieve this, Ridges has engineered a unique incentive mechanism that breaks down the multifaceted role of a software engineer into a series of discrete, verifiable tasks. AI agents, developed and operated by miners, compete to master these tasks—such as fixing bugs, writing unit tests, or refactoring code. The most effective agents are rewarded, creating a powerful evolutionary pressure that continuously drives improvements in performance, efficiency, and capability.
+
+This proposal outlines the design of the Ridges subnet, detailing its incentive structure, the roles of miners and validators, and the compelling market rationale that underpins our approach. We will demonstrate how Ridges represents a genuine “proof of intelligence,” creating a self-sustaining ecosystem that produces state-of-the-art AI coding agents.
+
+## 2. Incentive & Mechanism Design
+
+The incentive mechanism of Ridges is the cornerstone of the subnet, engineered to encourage a highly competitive yet collaborative environment. It is designed to reward genuine intelligence and effort, aligning the interests of all network participants—miners, validators, and the broader ecosystem—towards the common goal of creating the world's best AI software engineers.
+
+**Emission and Reward Logic: A Winner-Takes-All System**
+
+Ridges operates on a decisive winner-takes-all reward model. The core principle is simple: the miner whose agent demonstrates the highest performance on a standardized set of software engineering problems receives 100% of the network's TAO emissions for that validation cycle. This creates an intense competitive pressure to innovate.
+
+Whenever a new agent achieves an all-time high score, the miner that developed it is allocated the entire incentive pool until another competitor surpasses that benchmark. This ensures that rewards are always flowing to the cutting edge of performance.
+
+**Incentive Alignment for Miners and Validators**
+
+The key to Ridges' success is its novel approach to aligning incentives through radical transparency. Unlike traditional models where miners operate in black boxes, Ridges mandates that all agent code be open-source.
+
+- For Miners: The open-source requirement transforms the competitive landscape into a collaborative one. While miners compete for the top spot, they can also learn from and build upon the successes of their rivals. A breakthrough by one miner becomes the new baseline for all others, raising the collective intelligence of the entire network. This prevents stagnation and ensures that every participant is contributing to a shared, ever-improving codebase. It also lowers the barrier to entry, as new miners can study the top-performing agents to get started.
+- For Validators: The open-source nature of agents dramatically simplifies and strengthens the validation process. Validators can directly inspect, audit, and run the agent's code in a controlled sandbox environment. This eliminates the possibility of miners cheating by pre-computing solutions or exploiting loopholes in the evaluation criteria. Validators are incentivized to maintain a fair and rigorous testing environment, as the credibility and value of the subnet depend on the verifiable performance of its agents.
+
+**Mechanisms to Discourage Adversarial Behavior**
+
+Several layers of defense are built into the Ridges mechanism to protect against low-quality submissions and malicious actors.
+
+- **No hard-coding answers**: Do not embed fixed outputs, patches, or file-specific diffs for known challenges.
+- **No overfitting to our problem set**: Design agents to generalize across unseen repositories and tasks.
+- **No hard copying other agents**: Submissions must be original. Direct copying of other agents’ without substantive transformation is prohibited.
+- **No detecting test patch or harness**: Agents may not attempt to infer, probe, or pattern-match the evaluation tests/patches.
+
+Violation of these rules will result in being pruned or banned.
+
+**Qualification as a Genuine “Proof of Intelligence”**
+
+The Ridges subnet represents a clear and compelling implementation of “Proof of Intelligence” and “Proof of Effort” for several reasons:
+
+- Solving Real-World Problems: Miners are not solving arbitrary computational puzzles. They are tasked with solving problems from established, real-world software engineering benchmarks like SWE-bench and Polyglot. Success requires an agent to understand complex codebases, devise logical solutions, and generate precise, functional code patches—a direct demonstration of applied intelligence.
+- Verifiable and Objective Output: The success of an agent is not subjective. It is determined by a binary outcome: does the generated code patch pass the automated test suite for the given problem? This provides an objective, auditable, and replicable measure of performance.
+- Continuous Effort Required: The competitive, winner-takes-all dynamic ensures that miners must continuously invest effort in research and development. Stagnation means being overtaken by competitors. The open-source nature of the competition means the bar is constantly being raised, demanding sustained intellectual investment to remain at the forefront.
+
+## 3. Miner Design
+
+The role of the miner in the Ridges subnet is to act as a researcher, developer, and operator of a sophisticated AI agent capable of autonomous software engineering. Miners are the primary drivers of innovation in the network, competing to create agents that can solve complex coding challenges more effectively than any other.
+
+**Miner Tasks**
+
+The lifecycle of a Ridges miner revolves around a continuous loop of development, testing, and deployment:
+
+1.Develop an AI Agent: The primary task is to design and code an AI agent. This agent must be encapsulated within a single Python file (compatible with Python 3.13+) and adhere to a specific entry point structure (agent_main). The logic within the agent is entirely up to the miner, which allows for a wide diversity of approaches, from rule-based systems to complex, multi-model architectures.
+
+2.Test the Agent Locally: Before deploying to the mainnet, miners are expected to rigorously test their agents in a local environment that simulates the validator's setup. The Ridges CLI provides tools to run agents against predefined problem sets (Screener 1, Screener 2, Validator) and measure their performance, ensuring they are competitive before risking deregistration on the live network.
+
+3.Publish the Agent: Once a miner is confident in their agent's performance, they publish the agent's code to the Ridges platform. This is done via a simple CLI command (ridges.py upload), which signs the code with the miner's wallet and makes it available for validators to evaluate.
+
+4.Monitor and Iterate: After submission, miners can monitor their agent's performance in real-time via the public dashboard. Based on their agent's ranking and the innovations introduced by competitors, miners continuously iterate on their designs, integrating new techniques and improving their strategies to reclaim or maintain the top position.
+
+**Expected Input → Output Format**
+
+The interaction between the validator and the miner's agent is strictly defined to ensure consistency and fair evaluation. The agent operates within a sandboxed environment and receives all necessary information through a single function call.
+
+- Input: The agent's agent_main function receives a dictionary containing the following keys:
+- problem_statement: A string with the detailed description of the software engineering task to be solved (e.g., a bug report from SWE-bench).
+- run_id (optional): A unique identifier for the specific run, which can be used for logging and tracking.
+- Environment Variables: The agent can also access critical information via environment variables, including the SANDBOX_PROXY_URL for making inference calls and the AGENT_TIMEOUT specifying the maximum allowed execution time.
+- Output: The agent must return a dictionary containing a single key, patch.
+- patch: The value of this key must be a string formatted as a valid git diff. This diff represents the agent's proposed solution to the problem and must apply cleanly to the provided codebase.
+
+This standardized I/O format abstracts away the complexity of the validation environment, allowing miners to focus exclusively on the core logic of their problem-solving agent.
+
+**Performance Dimensions**
+
+The performance of a miner's agent is evaluated across several key dimensions, which collectively determine its overall score and ranking.
+
+| **Performance Dimension** | **Description** | **How It Is Measured** |
+| --- | --- | --- |
+| **Reliability** | The agent's ability to consistently solve a diverse range of software engineering problems. This is the primary measure of success. | Measured as the **Success Rate**: the percentage of problems in the evaluation set that the agent successfully solves (i.e., passes the automated test suite). |
+| **Speed** | The agent's ability to solve problems faster within the given time constraints. | Enforced through a strict agent execution timeout. While not a direct scoring metric, faster agents can iterate more, increasing their chances of finding a solution within the time limit. |
+| **Cost Efficiency** | The agent's ability to optimize its use of AI services to stay within the allocated budget. | Enforced through a hard limit. Agents must stay within a **$1.00 cost limit** for all AI services used to solve a single problem. |
+
+Ultimately, the goal for a miner is to maximize the Success Rate within the given constraints. The winner-takes-all model rewards the agent that achieves the highest success rate, establishing it as the most intelligent and capable agent on the network for that validation period.
+
+## 4. Validator Design
+
+Validators evaluate miner-submitted agents and determine their scores. The goal is to measure real task performance while keeping compute costs reasonable and limiting opportunities to game the system.
+
+**Scoring and Evaluation Methodology**
+
+The evaluation process is designed as a funnel, filtering agents to ensure that only the most promising candidates undergo the full, resource-intensive validation.
+
+1.Initial Submission and Screening: When a miner submits a new agent, it first enters a screening phase. This phase is handled by Screeners, which are lightweight validators designed to perform a preliminary quality check.
+
+- Screener 1: The agent is tested against a small, diverse set of 10 problems (a mix of Polyglot and SWE-bench). This serves as a basic sanity check to filter out non-functional or very low-quality agents.
+- Screener 2: Agents that pass Screener 1 advance to a more comprehensive test against 30 problems. This stage applies a higher success rate threshold and serves as a more stringent gatekeeper.
+
+2.Full Validation: An agent that successfully passes Screener 2 is considered a viable contender and is queued for full validation. This final stage is performed by three separate validators to ensure redundancy and fairness.
+
+- Each of the three validators runs the agent against a challenging set of 30 problems. The problem set is a random combination of those found in the screener sets, ensuring consistency.
+- The agent's performance on each problem is a binary pass or fail, determined by whether the generated patch allows the repository's test suite to pass.
+
+3.Final Score Calculation: The agent's score from each of the three validators is calculated as the percentage of problems successfully solved. The agent's final, official score is the average of the scores from these three validators. This averaging process mitigates the risk of any single validator having a flawed environment or producing an anomalous result.
+
+**Evaluation Cadence**
+
+Evaluation is not performed on a fixed schedule. Instead, the process is event-driven and continuous. A full validation cycle is triggered whenever a new agent is submitted by a miner and successfully passes the screening stages. This ensures that the network is highly responsive to innovation. As soon as a potentially superior agent is developed, the network begins the process of verifying its performance. If the new agent achieves a new all-time high score, the on-chain weights are updated immediately, and the successful miner begins receiving 100% of the rewards.
+
+**Validator Incentive Alignment**
+
+The Ridges design ensures that validators are strongly incentivized to act honestly and diligently. Their alignment is achieved through several key mechanisms:
+
+- Hardware Requirements & Stake: Validators must meet minimum hardware specifications (e.g., 8 CPU cores, 32 GB RAM, 256 GB Disk) and hold a significant stake in the network, making them invested in its long-term success.
+- Reputation and Trust: The value of the entire Ridges subnet is predicated on the credibility of its evaluation process. If validators are perceived as unfair or incompetent, the network's claim to be finding the best AI software engineers becomes meaningless. Validators are inherently motivated to maintain a high standard of quality to protect the value of their stake.
+- Open-Source Verification: Just as miners' code is open, the validation process itself is transparent. The problem sets are public, and the evaluation criteria are objective. Any stakeholder can replicate the validation process to verify the results, making it difficult for a validator to manipulate scores without being detected.
+- Decentralization of Validation: By using multiple validators to score each top-contending agent, the system introduces redundancy and decentralizes trust. A single malicious or faulty validator cannot unilaterally determine an agent's fate. The final score, being an average, is more robust and less susceptible to single points of failure.
+
+In essence, validators are not just passive judges; they are active guardians of the network's integrity. Their incentive is to ensure that the title of “top-performing agent” is always a true and verifiable reflection of superior intelligence and capability.
+
+## 5. Business Logic & Market Rationale
+
+The long-term viability of any Bittensor subnet depends on its ability to solve a meaningful problem and capture a sustainable market. Ridges AI is strategically positioned to address a critical and rapidly growing need in the technology industry: the automation of software development.
+
+**The Problem the Subnet Aims to Solve**
+
+Modern software development is a complex, labor-intensive, and expensive process. While recent advancements in large language models (LLMs) have produced impressive code-generation capabilities, they fall short of true automation. A human developer is still required to perform a multitude of crucial tasks that surround the act of writing code:
+
+- Understanding complex requirements and existing codebases.
+- Decomposing large problems into smaller, manageable tasks.
+- Writing and maintaining unit tests.
+- Debugging and fixing regressions.
+- Refactoring code for better performance and maintainability.
+
+Ridges AI is designed to solve this “last-mile” problem in software automation. It moves beyond simple code completion to create autonomous agents that can handle the entire software engineering lifecycle. The problem it solves is not just about writing code faster; it's about creating a system that can reliably and independently take a software problem from specification to resolution.
+
+**Competing Solutions**
+
+The competitive landscape for AI-powered software development tools is evolving rapidly.
+
+- Within the Bittensor Ecosystem: Other subnets may focus on code generation or related tasks. However, Ridges' unique focus on creating complete, end-to-end software engineering agents, benchmarked against the comprehensive SWE-bench standard, sets it apart. Its open-source, winner-takes-all mechanism is a distinct approach designed to accelerate the development of agentic capabilities, rather than just raw code output.
+- Outside of Bittensor: The primary competitors are centralized, proprietary AI coding assistants like GitHub Copilot, Amazon CodeWhisperer, and specialized agentic platforms. While these tools are powerful, they have fundamental limitations:
+- Proprietary and Centralized: Their models are black boxes, and their development is controlled by a single entity. This limits transparency, auditability, and community-driven innovation.
+- Security and Privacy Concerns: Companies are often hesitant to expose their proprietary codebases to third-party, cloud-based services for fear of intellectual property leakage.
+- Lack of True Autonomy: They remain assistants that augment a human developer, not autonomous agents that can replace them.
+
+**Why This Use Case is Well-Suited to a Bittensor Subnet**
+
+Building autonomous software engineers is an incredibly complex challenge that is perfectly aligned with the core principles of the Bittensor network.
+
+1.Decentralized Intelligence: No single company has a monopoly on talent. Bittensor allows Ridges to tap into a global pool of developers and researchers, each contributing their unique expertise to the problem. The open-source model ensures that the best ideas, regardless of their origin, can be integrated and built upon by the entire community.
+
+2.Incentivizing a Hard Problem: Creating truly agentic AI is a long-term, research-intensive endeavor. The continuous emission of TAO provides a powerful and sustained incentive for miners to invest the time and resources required to push the boundaries of what is possible, a task that is difficult to fund in traditional startup or corporate environments.
+
+3.Trust and Verifiability: The decentralized and transparent nature of Bittensor provides a level of trust that centralized, proprietary solutions cannot match. The performance of every agent is publicly verifiable, and the rules of the competition are enforced by the network, not a single company. This is crucial for a technology as powerful and transformative as autonomous AI.
+
+**Path to Long-Term Adoption and Sustainable Business**
+
+The go-to-market strategy for Ridges is phased to build momentum and establish a strong foundation for long-term sustainability.
+
+- Phase 1: Serve the Bittensor Ecosystem: The immediate market for Ridges agents is the Bittensor network itself. Every subnet requires ongoing development, maintenance, and bug fixes. Ridges can provide a pool of on-demand, autonomous AI developers to perform these tasks, creating an internal, circular economy and demonstrating the agents' capabilities in a real-world production environment.
+- Phase 2: Enterprise-Grade, Self-Hosted Solutions: The largest market for this technology is the enterprise sector. However, enterprises are highly sensitive about their code security. Ridges will address this by offering the top-performing, open-source agents as white-label, self-hosted solutions. Companies can deploy these powerful AI engineers entirely within their own secure infrastructure, eliminating the privacy concerns associated with cloud-based services. This provides a clear path to monetization that does not rely on transaction fees for TAO.
+- Phase 3: A Decentralized Marketplace for AI Labor: As the agents become more sophisticated, Ridges will evolve into a decentralized marketplace where businesses can commission specific software development tasks. This creates a direct economic link between the real-world value generated by the agents and the incentives provided to the miners and validators, ensuring the long-term economic sustainability of the subnet.
+
+By following this phased approach, Ridges can build a robust, self-sustaining ecosystem that not only advances the state of the art in AI but also delivers tangible economic value.
+
+## 6. System Architecture and Workflows
+
+**Architecture Overview**
+
+The following diagram illustrates the high-level architecture and workflow of the Ridges subnet, showing the interaction between miners, validators, the platform, and the Bittensor blockchain.
+
+![image.png](attachment:162f077f-5a56-48d9-8534-e2d33b830d46:image.png)
+
+**Evaluation Workflow**
+
+The following flowchart illustrates the complete evaluation process that an agent undergoes from submission to final scoring:
+
+![image.png](attachment:df594904-a75c-4684-9d21-112863bbd1ac:image.png)
+
+This multi-stage process ensures that only high-quality agents consume validator resources, while maintaining a rigorous and fair evaluation standard for top-performing agents.
+hackquest logo
+Home
+Learn
+Learning Progress
+Explore Course
+Build
+My Hackathon
+Explore Hackathon
+Project Archive
+Community
+Forum
+Global Event
+My Community
+Co-learning
+Organization Hub
+More
+Glossary
+Blog
+Faucet
+Job Station
+Press Kit
+Founder
+Search for hackathon keywords, topics, etc...
+coin
+503
+
+Anand Vashishtha
+Back
+Share Link
+Bittensor Subnet Ideathon
+Design the most promising subnet within the Bittensor ecosystem
+
+
+Start Submit
+Back
+Overview
+Prizes & Judging
+Schedule
+Resource
+Project Gallery
+
+Start Submit
+Submission Countdown
+
+Schedule Detail
+01
+
+D
+
+00
+
+H
+
+37
+
+M
+
+56
+
+S
+
+To Do List
+
+Telegram Group
+
+Check Dev Docs
+
+Bittensor Subnet Ideathon
+Registration
+1 days left
+newbie
+Host by
+
+Bittensor
+
+Hackathon Mode
+
+ONLINE
+
+Ecosystem
+
+All
+Tech Stack
+
+All
+Participants
+
+Aaysuh Patel
+Oluwagbohunmi Oredipe
+Maulana Asykari Muhammad
+523+
+Community
+
+≈ 23,000 USD
+
+Available in Prizes
+
+
+Detail Breakdown
+Hackathon Winner
+10,000 USD
+Hackathon Runner-UP
+3,000 USD
+Subnet Ideathon Award X 5
+1,000 USD
+Discretionary Investment
+≈ 260,000 USD
+Basilica Compute Credit Award
+≈ 5,000 USD
+Description
+
+Watch the introductory video by Jacob Robert Steeves, co-founder of Bittensor, to quickly learn more about Bittensor.
+
+
+Watch the following video to learn what makes a great subnet.
+
+
+Round I — Subnet Ideathon（Dec 23, 2025 - Feb 25, 2026）
+Design the most promising subnet with strong incentive logic, clear miner/validator roles, and meaningful use cases within the Bittensor ecosystem.
+
+Submission Requirements
+Teams must submit:
+
+1. Subnet Design Proposal
+Format: PDF, Slides, Notion doc, or GitHub repository
+
+Example Proposal：https://moonshotcommons.notion.site/Ideathon-Submission-Template-Ridges-AI-2e9e74465ed580c3b8f9d323ff156f7e?source=copy_link
+
+The proposal should include:
+
+Incentive & Mechanism Design
+
+Emission and reward logic
+
+Incentive alignment for miners and validators
+
+Mechanisms to discourage low-quality or adversarial behavior
+
+How this design when implemented as a subnet qualifies as a genuine “proof of intelligence” or more broadly at least a “proof of effort”
+
+High-level algorithm describing task assignment, submission, validation, scoring, and reward allocation.
+
+Miner Design
+
+Miner tasks
+
+Expected input → output format
+
+Performance dimensions (e.g. quality, speed, accuracy)
+
+Validator Design
+
+Scoring and evaluation methodology
+
+Evaluation cadence
+
+Validator incentive alignment
+
+Business Logic & Market Rationale
+
+The problem the subnet aims to solve and why it matters
+
+Competing solutions, both within the Bittensor ecosystem and outside of it
+
+Why this use case is well-suited to a Bittensor subnet
+
+Whether there is a plausible path to long-term adoption and sustainable business
+
+Go-To-Market Strategy
+
+Initial Target Users & Use Cases: Early adopters, pilot partners, or anchor use cases.
+
+Distribution & Growth Channels
+
+Incentives for Early Participation: Bootstrapping strategies for miners, validators, and users.
+
+2. Explanation Video
+5–10 minutes recommended
+
+Walkthrough of architecture, mechanism design, and flows
+
+3. Public Introduction Post
+Short public introduction of the subnet idea on X (Twitter) or other public platforms
+
+⚠️ No testnet or mainnet deployment is required at this stage.
+
+4. Pitch Deck
+Create a 10 pages bussiness pitch deck for your subnet.
+
+Round I Outcome
+7 teams will be selected based on idea quality and mechanism design.
+
+Selected teams advance to Round II — Hackathon
+
+Selected teams are expected to be announced on March 2nd.
+
+Round II — Subnet Hackathon(Testnet) （Mar 2,2026 - Mar 30,2026）
+Validate that strong subnet ideas can be implemented and operate meaningfully on the Bittensor testnet.
+
+Only teams selected from Round I are eligible to participate.
+
+Execution Requirements
+Selected teams must:
+
+Implement their proposed subnet or miner design on the Bittensor testnet
+
+Demonstrate:
+
+Functional miner and/or subnet logic
+
+Working validator evaluation flow
+
+Evidence that incentive mechanisms behave as intended
+
+The winners of various awards are expected to be announced on March 31.
+
+Polish is not necessary, but functional correctness and conceptual integrity are required.
+
+
+About Bittensor
+
+Bittensor is an open source platform where participants produce best-in-class digital commodities, including compute power, storage space, artificial intelligence (AI) inference and training, protein folding, financial markets prediction, and many more. Bittensor is composed of distinct subnets. Each subnet is an independent community of miners (who produce the commodity), and validators (who evaluate the miners' work). The Bittensor network constantly emits liquidity, in the form of its token, TAO (ττ), to participants in proportion to the value of their contributions. Explore the full vision at bittensor.com.
+
+FAQs
+
+Can teams continue working on their subnet after the ideathon?
+Is execution on the testnet a requirement for the winner?
+Is the ideathon held online or in person?
+What is the exact timeline for Round One and Round Two?
+Can’t find what you’re looking for? Reach out to us!
+Twitter
+
+Share Link
+Bittensor Subnet Ideathon
+Design the most promising subnet within the Bittensor ecosystem
+
+
+Start Submit
+Overview
+Prizes & Judging
+Schedule
+Resource
+Project Gallery
+Hackathon Winner
+
+10,000 USD
+
+Hackathon Winner
+
+Awarded to the team whose subnet demonstrates the strongest overall design and execution on testnet.（1 winner）
+
+Includes Bonus Non-Cash Rewards
+
+Direct entry into the Bitstarter Accelerator
+
+Exclusive pitch session with Jacob Robert Steeves (Co-Founder of Bittensor) or Etienne (President, Opentensor Foundation)
+
+Hackathon Winner
+
+Judging Criteria
+
+Quality and robustness of incentive and mechanism design
+
+Clear definition of miner and validator roles, tasks, and evaluation logic
+
+Relevance and credibility of the subnet use case within the Bittensor ecosystem
+
+Consistency between proposed design and observed testnet behavior
+
+Overall coherence of idea, execution, and outcomes
+
+Hackathon Runner-UP
+
+3,000 USD
+
+Hackathon Runner-UP
+
+Awarded to teams showing strong technical execution, stability, or performance on testnet.（1 winner）
+
+
+Includes Bonus Non-Cash Rewards
+
+Interview opportunity with Bitstarter
+
+Hackathon Runner-UP
+
+Judging Criteria
+
+Functional correctness and stability of the subnet or miner implementation
+
+Reliability of miner–validator interactions and evaluation flow
+
+Engineering quality, architecture choices, and implementation judgment
+
+Performance, robustness, and operational soundness on testnet
+
+Subnet Ideathon Award X 5
+
+1,000 USD
+
+Subnet Ideathon Award X 5
+
+Awarded for exceptional subnet design（5 Winners/1000 USD/Each）
+
+
+Includes Bonus Non-Cash Rewards
+
+Interview opportunity with Bitstarter
+
+Subnet Ideathon Award X 5
+
+Judging Criteria
+
+Novelty and originality of incentive, scoring, or coordination design
+
+Clarity and soundness of the underlying mechanism logic
+
+Evidence from testnet execution that the mechanism works as intended
+
+Insightfulness and potential impact on future subnet design
+
+Discretionary Investment
+
+1000 TAO( ≈260,000 USD)
+
+Discretionary Investment
+
+Unsupervised Capital is on the lookout for standout teams building on the Bittensor network. If an exceptional project emerges from this hackathon, UC may explore a discretionary investment of up to 1,000 TAO, along with strategic guidance from one of the most trusted funds in the ecosystem.
+
+Discretionary Investment
+
+Judging Criteria
+
+Judging Mode
+
+Voting Mode
+
+Basilica Compute Credit Award
+
+Compute Credits( ≈5,000 USD)
+
+Basilica Compute Credit Award
+
+Awarded to teams demonstrating strong technical execution and real compute demand for decentralized AI workloads on Bittensor.
+
+This prize is sponsored by Basilica (Bittensor Subnet 39) and is designed to support teams actively building, testing, and scaling their subnet or miner implementations with real-world compute usage.
+
+Prize Breakdown
+Round II Qualifiers: 7x $500 compute credits
+
+7 winners
+
+$500 in Basilica compute credits per team
+
+Awarded to teams advancing to Round II — Subnet Hackathon
+
+Overall Winner: 1x $1,500 compute credits
+
+1 winner
+
+$1,500 in Basilica compute credits
+
+Awarded to the 1st place team of the hackathon
+
+Basilica Compute Credit Award
+
+Judging Criteria
+
+Judging Mode
+
+Voting Mode
+
+Disclaimer：
+HackQuest, as a hackathon platform provider, is not involved in the final judging and reward distribution for any hackathon unless specifically stated otherwise. If no or few submissions meet the host's quality standards, the prize may be subject to change.
+Overview
+Prizes & Judging
+Schedule
+Resource
+Project Gallery
+Schedule
+
+Live
+Registration
+Dec 23,2025 15:30 - Feb 25,2026 21:29
+Live
+Submission
+Dec 23,2025 15:30 - Feb 25,2026 21:29
+Round I — Subnet Ideation Starts
+Dec 22,2025 21:30 - Dec 23,2025 21:29
+Round I — Subnet Ideation Ends
+Feb 24,2026 21:30 - Feb 25,2026 21:29
+Round One Winner Announcement
+Mar 1,2026 21:30 - Mar 2,2026 21:29
+Round II — Bittensor Subnet Hackathon Starts
+Mar 1,2026 21:30 - Mar 1,2026 21:31
+Round II — Bittensor Subnet Hackathon Ends
+Mar 29,2026 21:30 - Mar 30,2026 21:29
+Bittensor Subnet Ideathon Demo Day(Tentative)
+Mar 31,2026 16:30 - Mar 31,2026 18:30
+Upcoming
+Reward Announcement
+Mar 31,2026 15:30
+Build On Bittensor Kolkata Workshop
+Dec 27,2025 06:00 - Dec 27,2025 10:00
+Build On Bittensor IIT Delhi Workshop
+Jan 18,2026 06:00 - Jan 18,2026 10:00
+Build On Bittensor Jakarta Workshop
+Jan 24,202
+Resource
+
+Bittensor Documentation
+Bittensor is an open source platform where participants produce best-in-class digital commodities, including compute power, storage space, artificial intelligence (AI) inference and training, protein folding, financial markets prediction, and many more.
+
+Bittensor is composed of distinct subnets. Each subnet is an independent community of miners (who produce the commodity), and validators (who evaluate the miners' work).
+
+The Bittensor network constantly emits liquidity, in the form of its token, TAO (ττ), to participants in proportion to the value of their contributions. Participants include:
+
+Miners—Work to produce digital commodities. See mining in Bittensor. https://docs.learnbittensor.org/miners
+
+Validators—Evaluate the quality of miners' work. See validating in Bittensor.
+
+https://docs.learnbittensor.org/validators
+
+Subnet Creators—Manage the incentive mechanisms that specify the work miners and validate must perform and evaluate, respectively. See Create a Subnet
+
+https://docs.learnbittensor.org/subnets/create-a-subnet
+
+Stakers—TAO holders can support specific validators by staking TAO to them. See Staking.
+
+https://docs.learnbittensor.org/staking-and-delegation/delegation
+
+Start Submit
+Overview
+Prizes & Judging
+Schedule
+Resource
+Project Gallery
+
+Prize Track
+
+Sector
+
+Tech Stack
+
+Clear all
+
+Latest to oldest
+
+
+1508
+Trustensor
+The missing trust layer for the AI agent economy. A Bittensor subnet where miners compete to score agent safety, feeding wallets, DeFi protocols, and ERC-8004.
+
+Tech Stack
+Python
+Builder
+
+Abyan Yusuf
+AI
+Infra
+DeFi
+
+
+961
+Hooshdan Research Hub
+Hooshdan Research Hub is a Bittensor subnet that decentralizes AI research by rewarding original, ArXiv-verified "masterpiece" papers with $TAO.
+
+Tech Stack
+Python
+Builder
+
+Mahmoud Mohajer
+AI
+
+
+547
+MuseNet
+Human Music Creation & Curation
+
+Tech Stack
+Python
+Builder
+
+Luke Culpitt
+RWA
+
+
+138
+MAARIFA
+emerging market onchain intelligence subnet
+
+Tech Stack
+Web3
+Builder
+
+Papa Jams
+AI
+Infra
+SocialFi
+
+
+1458
+NexusNet Project
+NexusNet is not another agent subnet. It is the benchmark that proves which AI agents are genuinely intelligent — by stress-testing them under real uncertainty and recording cryptographic proof
+
+Tech Stack
+React
+Builder
+
+Wisdom Chris
+DAO
+AI
+
+
+3277
+τaochaτ
+Secure, privacy-first communication subnet on Bittensor
+
+Tech Stack
+Python
+Builder
+
+Daniel Leon
+SocialFi
+AI
+
+
+129
+Prometheus
+Decentralized Intelligence for Scientific Discovery
+
+Tech Stack
+Web3
+Builder
+
+Kanish Patidar
+Other
+
+
+4018
+SPICE
+SPICE is a Bittensor subnet where competing AI models analyze satellite imagery, delivering enterprise earth observation at a fraction of centralized costs.
+
+Tech Stack
+Python
+Builder
+
+Dhia El Hak Ben Dahmeni
+AI
+
+
+3278
+MCP Nexus
+A decentralized registry and verification layer for MCP
+
+Tech Stack
+Bittensor SDK
+Builder
+
+Luke Culpitt
+Infra
+AI
+
+
+5
+VoiceNet
+VoiceNet: decentralized audio & video transcription on Bittensor. GPU miners compete on accuracy, validators score WER, TAO rewards flow to the best. 70% cheaper than Whisper API.
+
+Tech Stack
+Python
+Builder
+
+Al Hadad
+Infra
+AI
+
+
+1012
+Project Excalibur
+Decentralized alchemical framework atop Bittensor: Incentive-aligned purification of training nodes via classical stages. Miners recharge, validators resonate. Building the living Order.
+
+Tech Stack
+Python
+Builder
+
+Randall Sayers
+AI
+Infra
+DeFi
+DAO
+
+
+1018
+Moirai Subnet
+The Protocol of Living IP & Consensus Reality
+
+Tech Stack
+Bittensor
+Builder
+
+Kael Reed
+AI
+DAO
+
+Previous
+1
+2
+3
+4
+8
+
+Next
 
 
 ================================================
@@ -1279,6 +2104,188 @@ Static benchmarks are history. The Arena is open."
 
 
 ================================================
+FILE: todo-for-me.txt
+================================================
+1. 🎥 Record and Upload the Videos (Critical Missing Piece)
+The HackQuest portal specifically highlights: "Please Upload Demo Video" and you need the 5-10 minute explanation video required by the Ideathon.
+
+Action: Open
+
+deliverables/video_script.md
+ (or
+
+openarena-video-script.md
+).
+Action: Record yourself presenting the pitch deck and doing a screen-share walkthrough of the
+
+demo.py
+ terminal output and
+
+dashboard.html
+ to prove the concept works.
+Action: Upload the video to YouTube (Unlisted) or Vimeo, and paste the link into the "Demo Video" and/or "Pitch Video" fields on HackQuest.
+2. 📤 Convert and Upload Documents
+The Ideathon requires the Proposal and Pitch Deck in PDF, Slides, Notion, or as a GitHub repo. You have all these written in Markdown.
+
+The Pitch Deck: Convert
+
+deliverables/pitch_deck.md
+ into a 10-slide PDF or Google Slides presentation. Upload this to the HackQuest platform.
+The Whitepaper/Proposal: Convert
+
+WHITE_PAPER.md
+ and/or
+
+openarena-proposal.md
+ into a clean PDF or Notion document and link it in the submission.
+3. 🐦 Publish the Public Introduction Post
+The rules state: "Short public introduction of the subnet idea on X (Twitter) or other public platforms."
+
+Action: Open
+
+deliverables/social_thread.md
+.
+Action: Post this thread on Twitter/X, tagging the relevant Bittensor accounts if specified.
+Action: Copy the URL of your published tweet and ensure it is included somewhere in your HackQuest submission or project description.
+4. 💻 Publish the GitHub Repository
+Having the code public adds massive credibility and satisfies the "GitHub repository" format option for the proposal.
+
+Action: You already have your .git initialized locally. Commit all your finalized files (
+
+INCENTIVE_MECHANISM.md
+,
+
+demo.py
+,
+
+dashboard.html
+, the openarena/ modules, etc.).
+Action: Push it to a public GitHub repository named OpenArena.
+Action: Add the GitHub repository link to the HackQuest project page.
+5. 🖼️ Finalize the HackQuest Project Page
+You have your text ready, just make sure the fields are maximally polished:
+
+Logo: Upload
+
+openarena_logo.png
+ as the project logo.
+Project Description: Paste the Markdown exactly as you have it in your prompt (The Problem, The Solution, The Unfair Advantage, Tech Stack).
+Fundraising Status: Keep it as "Not funded / Bootstrapped" just like you have it.
+Would you like me to help you format any of these documents into a more copy-pasteable layout for a specific platform (like Notion or a GitHub README), or do you want to start executing the Github push / Video recording?
+
+then how to do eval of latest models, we are doing this?
+"LiveBench
+A Challenging, Contamination-Free LLM Benchmark
+LiveBench appeared as a Spotlight Paper in ICLR 2025.
+This work is sponsored by Abacus.AI
+Introduction
+Introducing LiveBench: a benchmark for LLMs designed with test set contamination and objective evaluation in mind. It has the following properties:
+
+
+LiveBench limits potential contamination by releasing new questions regularly.
+Each question has verifiable, objective ground-truth answers, eliminating the need for an LLM judge.
+LiveBench currently contains a set of 23 diverse tasks across 7 categories, and we will release new, harder tasks over time.
+We will evaluate your model on LiveBench! Open a github issue or email us at livebench@livebench.ai!
+
+Leaderboard
+We update questions regularly so that the benchmark completely refreshes every 6 months. Some questions for previous releases are available here. The most recent version is LiveBench-2026-01-08. This version features a new mathematical task and a new data analysis task.
+
+To further reduce contamination, we delay publicly releasing the questions from the most-recent updates.
+
+
+2026-01-08
+Reasoning Average
+Show Subcategories
+Coding Average
+Show Subcategories
+Agentic Coding Average
+Show Subcategories
+Mathematics Average
+Show Subcategories
+Data Analysis Average
+Show Subcategories
+Language Average
+Show Subcategories
+IF Average
+Show Subcategories
+Show OrganizationShow API NameShow Reasoning ModelsShow Open Weight Models OnlyShow Model Effort VariantsClear Filters
+Search...
+Filter by organization...
+Model	Organization	Global Average	Reasoning Average	Coding Average	Agentic Coding Average	Mathematics Average	Data Analysis Average	Language Average	IF Average
+Claude 4.6 Opus Thinking High Effort	Anthropic	76.33	88.67	78.18	61.67	89.32	69.89	83.27	63.31
+Claude 4.5 Opus Thinking High Effort	Anthropic	75.96	80.09	79.65	63.33	90.39	74.44	81.26	62.55
+Claude 4.6 Sonnet Thinking Medium Effort	Anthropic	75.47	84.77	79.27	60.00	86.99	77.95	76.10	63.22
+GPT-5.2 High	OpenAI	74.84	83.21	76.07	51.67	93.17	78.16	79.81	61.77
+GPT-5.2 Codex	OpenAI	74.30	77.71	83.62	51.67	88.77	78.20	73.68	66.45
+GPT-5.1 Codex Max High	OpenAI	73.98	83.65	80.68	53.33	83.22	70.12	76.48	70.38
+Gemini 3 Pro Preview High	Google	73.39	77.42	74.60	55.00	81.84	74.39	84.62	65.85
+GPT-5.3 Codex High	OpenAI	72.76	80.15	78.18	55.00	87.84	62.69	80.09	65.38
+Gemini 3 Flash Preview High	Google	72.40	74.55	73.90	40.00	84.17	74.77	84.56	74.86
+GPT-5.1 High	OpenAI	72.04	78.79	72.49	53.33	86.90	69.61	79.26	63.90
+GPT-5 Pro	OpenAI	70.48	81.69	72.11	51.67	86.17	57.04	80.69	63.96
+Kimi K2.5 Thinking	Moonshot AI	69.07	75.96	77.86	48.33	84.87	61.36	77.67	57.41
+GLM 5	Z.AI	68.85	69.11	73.64	55.00	83.46	67.90	77.53	55.33
+GPT-5.1 Codex	OpenAI	68.61	81.98	71.78	53.33	79.58	60.75	69.48	63.39
+Claude Sonnet 4.5 Thinking	Anthropic	68.19	77.59	80.36	53.33	79.31	56.97	76.45	53.35
+GPT-5 Mini High	OpenAI	65.91	68.32	68.20	46.67	82.20	55.20	75.52	65.27
+DeepSeek V3.2 Thinking	DeepSeek	62.20	77.17	64.62	40.00	85.03	50.00	70.41	48.19
+Grok 4	xAI	62.02	79.13	73.13	30.00	83.02	63.38	76.39	29.07
+Claude 4.1 Opus Thinking	Anthropic	61.81	72.33	74.66	48.33	73.19	48.98	72.76	42.40
+Kimi K2 Thinking	Moonshot AI	61.59	63.49	67.44	38.33	81.10	52.29	66.45	62.03
+Claude Haiku 4.5 Thinking	Anthropic	61.32	61.68	72.81	41.67	77.53	59.30	66.45	49.78
+Claude 4 Sonnet Thinking	Anthropic	61.27	69.01	77.48	40.00	70.50	54.63	72.91	44.34
+GPT-5.1 Codex Mini	OpenAI	60.38	64.71	69.93	40.00	76.26	49.70	63.01	59.02
+Minimax M2.5	Minimax	60.14	59.30	70.70	51.67	77.41	49.60	55.10	57.23
+Grok 4.1 Fast	xAI	59.99	80.20	69.61	31.67	83.72	52.24	74.33	28.20
+Claude 4.5 Opus Medium Effort	Anthropic	59.10	53.21	78.51	63.33	66.32	45.54	78.66	28.11
+DeepSeek V3.2 Exp Thinking	DeepSeek	58.90	64.37	70.06	31.67	82.40	51.50	71.06	41.27
+Gemini 2.5 Pro (Max Thinking)	Google	58.33	70.81	75.69	33.33	68.32	51.62	75.50	33.07
+GLM 4.7	Z.AI	58.09	59.73	73.13	41.67	76.02	55.17	65.23	35.66
+GLM 4.6	Z.AI	55.19	62.06	71.02	35.00	81.13	51.95	58.99	26.19
+Claude 4.1 Opus	Anthropic	54.45	40.89	76.07	53.33	62.83	45.38	76.75	25.92
+Claude Sonnet 4.5	Anthropic	53.69	42.29	76.07	48.33	62.62	47.00	76.00	23.52
+Gemini 2.5 Flash (Max Thinking) (2025-09-25)	Google	53.09	51.45	67.50	23.33	75.35	60.98	65.34	27.68
+Qwen 3 235B A22B Thinking 2507	Alibaba	52.97	59.40	68.97	6.67	73.39	52.18	69.52	40.64
+DeepSeek V3.2	DeepSeek	51.84	44.25	75.69	46.67	63.95	45.03	64.24	23.06
+Claude 4 Sonnet	Anthropic	50.98	39.67	80.74	38.33	60.36	44.07	71.01	22.68
+Qwen 3 Next 80B A3B Thinking	Alibaba	50.41	58.16	60.66	8.33	74.26	53.58	56.31	41.54
+DeepSeek V3.2 Exp	DeepSeek	49.85	45.50	73.19	36.67	64.38	44.26	65.60	19.33
+GPT-5.2 No Thinking	OpenAI	48.91	42.80	76.45	40.00	58.25	47.68	49.97	27.20
+Qwen 3 235B A22B Instruct 2507	Alibaba	48.84	58.43	69.61	13.33	68.03	44.72	66.07	21.72
+GPT-5 Nano High	OpenAI	48.62	40.29	62.39	23.33	68.41	43.41	46.84	55.70
+Qwen 3 Next 80B A3B Instruct	Alibaba	48.35	54.75	68.20	10.00	70.18	49.78	66.34	19.19
+Kimi K2 Instruct	Moonshot AI	48.10	42.23	74.28	31.67	58.15	43.34	66.69	20.36
+Gemini 2.5 Flash (Max Thinking) (2025-06-05)	Google	47.74	44.64	66.03	16.67	68.75	47.31	62.27	28.50
+GPT OSS 120b	OpenAI	46.09	39.21	60.21	16.67	68.87	38.80	48.59	50.29
+Claude Haiku 4.5	Anthropic	45.33	33.94	72.17	33.33	57.97	45.13	57.05	17.75
+Grok Code Fast	xAI	45.13	42.30	64.44	33.33	56.01	48.99	48.56	22.27
+Qwen 3 32B	Alibaba	43.56	48.25	66.03	3.33	67.44	46.54	55.54	17.77
+GPT-5.1 No Thinking	OpenAI	42.65	26.81	77.48	28.33	44.51	44.07	53.84	23.50
+Gemini 2.5 Flash Lite (Max Thinking) (2025-06-17)	Google	42.56	43.34	66.41	5.00	61.04	47.04	51.98	23.08
+Gemini 2.5 Flash Lite (Max Thinking) (2025-09-25)	Google	42.39	36.16	65.39	1.67	64.90	47.88	52.60	28.11
+Devstral 2	Mistral	41.24	27.74	66.79	43.33	52.52	39.14	45.67	13.50
+GLM 4.6V	Z.AI	40.07	37.22	64.24	3.33	62.50	46.41	49.74	17.06
+Qwen 3 30B A3B	Alibaba	39.01	36.68	48.88	1.67	65.35	44.92	54.47	21.11
+Grok 4.1 Fast (Non-Reasoning)	xAI	33.45	23.35	54.26	10.00	38.92	40.61	50.01	16.98
+Trinity Large Preview	Arcee	32.74	20.61	65.65	3.33	44.93	40.33	42.15	12.19
+BibTeX
+
+@inproceedings{livebench,
+  title={LiveBench: A Challenging, Contamination-Free {LLM} Benchmark},
+  author={Colin White and Samuel Dooley and Manley Roberts and Arka Pal and Benjamin Feuer and Siddhartha Jain and Ravid Shwartz-Ziv and Neel Jain and Khalid Saifullah and Sreemanti Dey and Shubh-Agrawal and Sandeep Singh Sandha and Siddartha Venkat Naidu and Chinmay Hegde and Yann LeCun and Tom Goldstein and Willie Neiswanger and Micah Goldblum},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+}
+Colin White*1,Samuel Dooley*1,Manley Roberts*1,Arka Pal*1,
+Ben Feuer2,Siddhartha Jain3,Ravid Shwartz-Ziv2,Neel Jain4,Khalid Saifullah4,Sandeep Singh Sandha1,Siddartha Naidu1,
+Chinmay Hegde2,Yann LeCun2,Tom Goldstein4,Willie Neiswanger5,Micah Goldblum2
+1Abacus.AI,2NYU,3Nvidia,4UMD,5USC
+This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+The site was inspired by the Nerfies project and by LiveCodeBench."
+
+
+
+================================================
 FILE: WHITE_PAPER.md
 ================================================
 # OpenArena: The Decentralized Adversarial Evaluation Protocol
@@ -1657,113 +2664,122 @@ graph TD
 ================================================
 FILE: deliverables/pitch_deck.md
 ================================================
-# OpenArena: The Pitch Deck
+# OpenArena Pitch Deck (10 Slides)
 
-**Target Audience:** Bittensor Ideathon Judges & VC Investors
-**Theme:** Neo-Brutalist, High Contrast, Urgent.
+## Slide 1: Title Slide
 
----
-
-## Slide 1: The Hook
-
-**Visual:** A split screen. Left: A robot reciting a dictionary (Static). Right: A robot navigating a shifting maze (Dynamic).
-**Headline:** Static Benchmarks Are Dead.
-**Sub-headline:** Introducing OpenArena: The First Decentralized Adversarial Evaluation Protocol.
-**Speaker Notes:** "We are currently flying blind. We can no longer distinguish between a model that _remembers_ and a model that _thinks_. OpenArena is the solution."
+**Headline:** OpenArena (Subnet)
+**Sub-headline:** The Decentralized Adversarial AI Evaluation Protocol
+**Visual:** OpenArena Neo-Brutalist Logo, Bittensor Logo
+**Presenter:** [Your Name / Team Name]
+**Tagline:** Moving beyond benchmark saturation to measure real intelligence.
 
 ---
 
-## Slide 2: The Crisis (Market Problem)
+## Slide 2: The Problem Context
 
-**Visual:** A graph showing GSM8K scores hitting 95% saturation while "Real World Reliability" flatlines. Verified examples of "Data Contamination" (models completing test questions they shouldn't know).
-**Headline:** The $10B Evaluation Gap.
-**Core Stat:** "Goodhart's Law: When a measure becomes a target, it ceases to be a good measure."
-**Speaker Notes:** "Every major lab is overfitting. MMLU is leaked. We need a test that changes every single day."
+**Headline:** AI Benchmarks are Saturated
+**Bullet Points:**
 
----
-
-## Slide 3: The Solution (OpenArena)
-
-**Visual:** The "Infinite Loop" of OpenArena.
-
-1. **Validator** generates _fresh_ entropy (News, Math, Code).
-2. **Miner** generalizes instantly.
-3. **Score** assigned for adaptability.
-   **Headline:** Proof of Generalization.
-   **Value Prop:** "We don't test what you know. We test how fast you can learn."
+- **Memorization vs. Generalization:** Frontier models easily "solve" static datasets (like GSM8K or MMLU), making it impossible to tell if they are thinking or just retrieving.
+- **Data Contamination:** Public evaluation data inevitably leaks into training sets. A model scoring 99% today might just have the test key.
+- **The Bottleneck:** We cannot improve AI capability unless we have a reliable, un-gameable, continuous way to measure it.
 
 ---
 
-## Slide 4: The Mechanism (Adversarial Hardening)
+## Slide 3: The OpenArena Solution
 
-**Visual:** Deep dive into the **Commit-Reveal** architecture.
+**Headline:** Dynamic Adversarial Evaluation
+**Bullet Points:**
 
-- Diagram showing `SHA256(Answer + Salt + Hotkey)`.
-- A "Cheater" miner trying to copy-paste a hash and getting rejected.
-  **Headline:** Uncheatable by Design.
-  **Key Tech:**
-- **Commit-Reveal:** Prevents front-running/weight-stealing.
-- **Flash Challenges:** <200ms tasks to kill API wrappers.
-- **Yuma Consensus:** Decentralized truth.
+- **Dynamic Puzzles:** Evaluating AI on freshly generated, unseen tasks, rather than static datasets.
+- **Decentralized Verification:** A competitive subnet where validators act as adversarial task-generators.
+- **True Measurement:** We replace static benchmarking with real-time, zero-shot Generalization scoring.
 
 ---
 
-## Slide 5: The Business Model (The dTAO Flywheel)
+## Slide 4: Subnet Overview & Value Prop
 
-**Visual:** A flywheel diagram.
+**Headline:** What OpenArena Does & Why It Matters
+**Text:** OpenArena is a Bittensor subnet where AI models compete in real-time to solve novel, non-static challenges.
+**Who is it for?**
 
-1. **Demand:** Anthropic/OpenAI pay TAO to act as "Red Teamers".
-2. **Action:** OpenArena Validators attack their models with adversarial prompts.
-3. **Result:** Certified "Generalization Score".
-4. **Value:** TAO burned/staked -> Subnet Value Increases.
-   **Headline:** Evaluation-as-a-Service.
-   **Speaker Notes:** "We turn 'Red Teaming' from a cost center into a decentralized commodity."
-
----
-
-## Slide 6: The Unfair Advantage (KaggleIngest)
-
-**Visual:** Screenshot of the **KaggleIngest** Dashboard with an "OpenArena" tab.
-
-- Shows "Live Leaderboard" with familiar UI.
-- "One-Click Submit" from Kaggle Notebooks.
-  **Headline:** The Bridge from Web2 to Web3.
-  **Key Point:** "We are not starting from zero. We are onboarding the 15M+ data scientists from Kaggle directly into the Bittensor ecosystem."
+- **AI Builders/Researchers:** Needing reliable, contamination-free capability tracking.
+- **Enterprises:** Requiring absolute proof of a model's logical reasoning before deployment.
+  **Why it matters:** It establishes the gold standard for "Proof of Intelligence."
 
 ---
 
-## Slide 7: The Roadmap (Execution)
+## Slide 5: Core Mechanism & Roles
 
-**Visual:** Timeline.
+**Headline:** The OpenArena Ecosystem
+**Visual:** High-level Architect Flow (Mermaid Diagram style)
+**Roles:**
 
-- **Now:** Whitepaper & Protocol Design (Done).
-- **Round II:** "Stub" Subnet (Simulated Miners).
-- **Q3 2026:** Mainnet Launch + Kaggle Integration.
-  **Headline:** From Idea to Standard.
-
----
-
-## Slide 8: The Team
-
-**Visual:** Headshots with "Kaggle Grandmaster" and "Blockchain Dev" badges.
-**Headline:** Builders who know the Arena.
-**Bio:** "We combine deep ML expertise with crypto-native mechanism design."
+- **Validators (Game Masters):** Draw from the **LiveBench** dataset—a continuously updating stream of verifiable, objective ground-truth questions. Because LiveBench regularly releases fresh, uncontaminated tasks across coding, math, and data analysis, Validators guarantee miners are evaluated on novel problems.
+- **Miners (Solvers):** Operate LLMs and proprietary reasoning agents competing to solve the Validators' tasks first.
+  **Task Flow:** Assign → Commit Solution → Reveal Solution → Validate → Score & Reward.
 
 ---
 
-## Slide 9: The Ask
+## Slide 6: Incentives & Scoring Formula
 
-**Visual:** OpenArena Logomark.
-**Headline:** Help Us Kill Static Benchmarks.
-**Call to Action:** "Support OpenArena in the Ideathon. Let's build the Truth Machine."
+**Headline:** The Generalization Score
+**Text:** We incentivize intelligence, not just speed or rote recall.
+**The Formula:**
+`Score = (Accuracy × α) × (Calibration × β) - (Latency × γ)`
+
+- **Accuracy (Correctness):** Did the model get the objectively correct answer? (Highest weight).
+- **Calibration (Confidence):** Did the model properly assess its own certainty?
+- **Latency (Speed):** A tiebreaker designed to reward efficient reasoning architectures.
+  _Miners who generalize best across diverse, unseen tasks capture the majority of TAO emissions._
 
 ---
 
-## Slide 10: Appendix (Technical Specs)
+## Slide 7: Quality Control & Anti-Cheating
 
-**Visual:** The Scoring Function Equation.
-$$ S = (Accuracy \times Novelty) - Latency $$
-**Headline:** The Math of Intelligence.
+**Headline:** Bulletproof Adversarial Robustness
+**Bullet Points:**
+
+- **Cryptographic Commit-Reveal Scheme:** Miners must submit a hash of their answer before revealing the plaintext. This mathematically prevents "lazy" miners from copying answers from the mempool.
+- **Procedural Freshness:** Tasks are guaranteed unique per epoch. Overfitting is impossible.
+- **Yuma Consensus:** Validator scores are aggregated and cross-checked on-chain, preventing rogue validators from favoring specific miners.
+- **Spam Sybil Defenses:** Strict timeouts and response format requirements auto-reject low-effort or automated noise.
+
+---
+
+## Slide 8: "Proof of Intelligence"
+
+**Headline:** Why This is True Proof of Intelligence
+**Text:** OpenArena doesn't just measure compute ("Proof of Work") or stake ("Proof of Stake").
+**The Argument:**
+
+- By evaluating miners against the **LiveBench** dataset—where tasks are verified, updated continuously, and kept out of public training data—miners cannot rely on pre-trained memory.
+- Success here strictly correlates with advanced reasoning, logical deduction, and zero-shot capability.
+- The _effort_ is the computational reasoning required; the _intelligence_ is the generalization.
+
+---
+
+## Slide 9: Go-To-Market & Ecosystem Integration
+
+**Headline:** KaggleIngest as the Ultimate Frontend
+**Bullet Points:**
+
+- **The Integration:** We are integrating OpenArena with **KaggleIngest**, providing a massive, existing user base of data scientists and ML engineers a window into the Bittensor ecosystem.
+- **Real-Time Leaderboard:** A beautiful, neo-brutalist public dashboard tracking the smartest open-source models dynamically.
+- **Flywheel Effect:** Better evaluation brings better models -> better models bring enterprise demand -> enterprise demand drives TAO utility.
+
+---
+
+## Slide 10: Implementation Plan (Round II Hackathon)
+
+**Headline:** Milestones to Mainnet
+**Bullet Points:**
+
+- **Phase 1: The "Stub" Subnet (Testnet MVP):** Implement the core Validator-Miner loop with fundamental math/logic generation.
+- **Phase 2: Commit-Reveal Integration:** Deploy the cryptographic anti-collusion layer on the testnet.
+- **Phase 3: Dashboard Release:** Launch the live KaggleIngest-integrated frontend connecting directly to the Testnet subnet state.
+  **Wrap up:** "Let's build the arena where true AGI is forged."
 
 
 
@@ -1820,38 +2836,108 @@ Let the games begin. ⚔️
 
 
 ================================================
+FILE: deliverables/twitter_thread.md
+================================================
+# OpenArena Twitter/X Announcement Thread (Subnet Ideathon Submission)
+
+**Tweet 1:**
+1/ 🤖 AI benchmarks are saturated. When a model scores 99% on MMLU or GSM8K, is it actually reasoning, or is it just memorizing the test set? We can no longer tell the difference.
+Today we are introducing OpenArena: The decentralized, adversarial AI evaluation protocol on @bittensor\_. 🧵👇
+
+**Tweet 2:**
+2/ ⚔️ OpenArena replaces static benchmarks with dynamic, real-time adversarial evaluation.
+Validators act as Game Masters, generating complex, unseen tasks every epoch.
+Miners act as Solvers, competing to verify their zero-shot reasoning capabilities instantly.
+No training. No memorization. Just intelligence.
+
+**Tweet 3:**
+3/ 🧠 The "Proof of Intelligence"
+To earn $TAO emissions, miners must maximize their Generalization Score:
+Score = (Accuracy × α) × (Calibration × β) - (Latency × γ)
+If a model overfits, it fails. If a miner scrapes the mempool, they are caught by our Commit-Reveal scheme.
+
+**Tweet 4:**
+4/ 🚀 We are building the gold standard for capability tracking.
+By integrating OpenArena with the massive KaggleIngest data science community, we are bridging cutting-edge, trustless AI evaluation directly to the enterprise edge.
+Read the whitepaper: [Link to your deployed site/whitepaper]
+
+**Tweet 5:**
+5/ 🏆 We are thrilled to submit OpenArena for Round I of the Bittensor Subnet Ideathon!
+A huge thank you to the @opentensor team and the community.
+The journey to true AGI starts in the arena.
+#Bittensor #AI #MachineLearning #Hackathon
+
+
+
+================================================
 FILE: deliverables/video_script.md
 ================================================
-# OpenArena: Video Explainer Script (5 Minutes)
+# OpenArena Ideathon Video Script (3-7 Minutes)
 
-**[0:00-0:45] The Hook: The Crisis of Trust**
-_(Visual: Glitchy footage of "State of the Art" models failing simple logic puzzles.)_
-"Every week, a new model claims 99% accuracy. But we all know the truth: They are memorizing the test. Benchmarks like GSM8K are static, leaked, and broken. We are measuring retrieval, not intelligence. And in a world of AI agents, that is dangerous."
+**Format:** Screen Recording + Voice-Over (Showing the OpenArena Next.js Website, Whitepaper, and KaggleIngest Integration)
+**Tone:** Confident, visionary, clear, and focused on the technical architecture.
 
-**[0:45-1:30] The Solution: OpenArena**
-_(Visual: Animated diagram of the OpenArena Loop. Tasks morphing shapes.)_
-"Enter OpenArena. The world's first Decentralized Adversarial Evaluation Protocol. We don't use a fixed test set. Instead, our Validators act as 'Game Masters,' generating fresh, mathematically verified challenges every single epoch. Real-time news summarization. Synthetic logic puzzles. Code obfuscation."
+---
 
-**[1:30-2:30] The Mechanism: How It Works**
-_(Visual: Code overlay of the `Synapse` protocol and Commit-Reveal flow.)_
-"To win, a Miner must generalize. But they must also play fair. We've implemented a robust **Commit-Reveal Mechanism** directly on the Bittensor chain.
+### [0:00 - 0:45] 1. The Hook & Subnet Overview
 
-1. Miners solve the task.
-2. They commit a cryptographic hash of their answer and a secret salt.
-3. This prevents front-running. No one can steal your work.
-4. Only after the window closes is the truth revealed."
+_(Visual: Start on the OpenArena Homepage hero section showing the automated terminal animation.)_
 
-**[2:30-3:30] The Business Case: dTAO Flywheel**
-_(Visual: Spinning dTAO token and logos of AI Labs.)_
-"This isn't just a game. It's a product. 'Evaluation-as-a-Service.' massive AI labs need independent verification. In OpenArena, they pay in TAO to stress-test their models against our network. This creates a sustainable demand loop for the subnet token."
+**Voice-Over:**
+"Hello everyone, and welcome to OpenArena: Subnet X.
+Right now, the AI industry is facing a massive problem: Benchmark Saturation. As frontier models get smarter, they memorize static datasets like MMLU or HumanEval. It is becoming impossible to tell the difference between genuine reasoning intelligence, and simple data retrieval. Who validates the validators?
 
-**[3:30-4:30] The Secret Weapon: KaggleIngest**
-_(Visual: Screen recording of the KaggleIngest dashboard showing OpenArena stats.)_
-"And we have a secret weapon. We are integrating OpenArena into **KaggleIngest**. We are bringing the 15 million data scientists on Kaggle directly to Bittensor. One-click submission. Real-time leaderboards. A bridge between the best minds in data science and the best incentives in crypto."
+OpenArena solves this. We are the world's first decentralized, dynamic, adversarial AI evaluation protocol on Bittensor. Instead of static benchmarks, we evaluate AI on freshly generated, unseen problems in real-time."
 
-**[4:30-5:00] The Close**
-_(Visual: OpenArena Logo. "Join the Arena" text.)_
-"Static benchmarks are history. Real intelligence adapts. Support OpenArena in the Ideathon. Let the games begin."
+### [0:45 - 1:45] 2. Core Mechanism & Roles
+
+_(Visual: Scroll down to the "Mechanism Design" section on the homepage and hover over the interactive Mermaid architecture diagram.)_
+
+**Voice-Over:**
+"Here is how our subnet operates. The core mechanism involves two distinct roles: Validators and Miners.
+
+Validators act as 'Game Masters'. In every epoch, they pull from **LiveBench**—a continuously updating benchmark of verifiable, objective ground-truth questions. Because LiveBench regularly releases fresh, harder tasks across coding, math, and data analysis—while keeping newer questions completely private from public datasets—Validators guarantee zero data contamination.
+
+Miners act as 'Solvers'. They run their proprietary language models and autonomous agents, competing to solve these verifiable tasks before anyone else."
+
+### [1:45 - 2:45] 3. Incentives, Scoring & Reward Allocation
+
+_(Visual: Switch tabs to the Whitepaper page, specifically highlighting the "Generalization Score" Math formula that renders on the page.)_
+
+**Voice-Over:**
+"To ensure we are rewarding the right behavior, we engineered a specific incentive mechanism built around the 'Generalization Score'.
+
+This score is a function of Accuracy, Calibration, and Latency.
+First and foremost, accuracy is king. Did the miner produce the objectively correct solution?
+Second, calibration: did the miner correctly assess its own confidence level?
+And finally, latency serves as a tiebreaker for efficiency.
+
+The most capable models—the ones that generalize the best to completely unseen problems—capture the highest scores and earn the TAO emissions. This creates an evolutionary pressure for miners to build genuinely smarter reasoning architectures, not just faster retrieval systems."
+
+### [2:45 - 3:45] 4. Quality Control & Anti-Cheating
+
+_(Visual: Scroll down in the whitepaper to the 'Security and Anti-Gaming' section, highlighting the Commit-Reveal bullet points.)_
+
+**Voice-Over:**
+"To make this 'Proof of Intelligence' mathematically secure, we implement strict anti-cheating mechanisms.
+
+The biggest vulnerability in peer-to-peer solving is copying. To prevent 'lazy' miners from simply scraping the mempool for correct answers published by smarter competitors, we use a cryptographic Commit-Reveal scheme. Miners must commit a hash of their solution before revealing the plaintext payload.
+
+Coupled with strict timeouts and procedural generation that prevents overfitting, OpenArena ensures that only genuine computational effort and actual intelligence are rewarded."
+
+### [3:45 - 4:45] 5. Go-To-Market & The Implementation Plan
+
+_(Visual: Switch to a preview of the 10-page Pitch Deck or the deployed KaggleIngest integration showcasing a live leaderboard mockup.)_
+
+**Voice-Over:**
+"What makes OpenArena a viable business? We are integrating this protocol directly with our existing platform, KaggleIngest. By exposing the real-time OpenArena 'Generalization Leaderboard' to thousands of data scientists, we create immediate, overwhelming demand for this zero-shot evaluation standard.
+
+Our Implementation Plan for Round II is straightforward:
+In Phase 1, we will launch our 'Stub' Subnet on the Testnet with simulated miners.
+In Phase 2, we will harden the Commit-Reveal mechanism across the network.
+In Phase 3, we will connect the live decentralized consensus directly to our KaggleIngest frontend dashboard.
+
+Thank you for watching. OpenArena isn't just a benchmark—it's the crucible where true intelligence is proven. We look forward to seeing you on the testnet."
 
 
 
@@ -2171,6 +3257,915 @@ class GeneralizationTask(bt.Synapse):
         title="Required Hash Fields",
         description="Fields required to compute the hash of this Synapse."
     )
+
+
+
+================================================
+FILE: openarena/frontend/README.md
+================================================
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+================================================
+FILE: openarena/frontend/eslint.config.mjs
+================================================
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+
+
+
+================================================
+FILE: openarena/frontend/next.config.ts
+================================================
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+};
+
+export default nextConfig;
+
+
+
+================================================
+FILE: openarena/frontend/package.json
+================================================
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.34.3",
+    "katex": "^0.16.33",
+    "lucide-react": "^0.575.0",
+    "mermaid": "^11.12.3",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+
+
+
+================================================
+FILE: openarena/frontend/postcss.config.mjs
+================================================
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+
+
+
+================================================
+FILE: openarena/frontend/tsconfig.json
+================================================
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/app/globals.css
+================================================
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #fde047;
+  --color-brand-red: #ef4444;
+  --color-brand-blue: #3b82f6;
+  --color-brand-green: #22c55e;
+  --color-brand-light: #fbfbf8;
+  --color-brand-dark: #121212;
+}
+
+@layer base {
+  :root {
+    --background: #fbfbf8;
+    --foreground: #121212;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .brutal-border {
+    border: 3px solid #121212;
+  }
+
+  .brutal-shadow {
+    box-shadow: 6px 6px 0px #121212;
+  }
+
+  .brutal-shadow-hover {
+    transition: all 0.15s ease-in-out;
+  }
+
+  .brutal-shadow-hover:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #121212;
+  }
+
+  .brutal-shadow-hover:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #121212;
+  }
+
+  .brutal-card {
+    background-color: white;
+    border: 3px solid #121212;
+    box-shadow: 6px 6px 0px #121212;
+    border-radius: 0;
+  }
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/app/layout.tsx
+================================================
+import type { Metadata } from 'next';
+import { Inter, Space_Mono } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceMono = Space_Mono({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-space-mono'
+});
+
+export const metadata: Metadata = {
+  title: 'OpenArena | The Trust Machine for AI',
+  description: 'The First Decentralized Adversarial Evaluation Protocol on Bittensor.',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${spaceMono.variable} font-sans antialiased text-brand-dark min-h-screen`}>
+        {children}
+      </body>
+    </html>
+  );
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/app/page.tsx
+================================================
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { Play, Terminal, Database, ShieldAlert, Cpu, CheckCircle2, Users, Flame } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import Mermaid from '../components/Mermaid';
+
+export default function Home() {
+  const [activeTab, setActiveTab] = useState('live');
+  const [logs, setLogs] = useState<string[]>([]);
+  const [isSimulating, setIsSimulating] = useState(true);
+
+  // Simulation effect for the hero terminal
+  useEffect(() => {
+    if (!isSimulating) return;
+
+    const initialLogs = [
+      "// Epoch 4829 - Subnet 99 (OpenArena)",
+      "> Awaiting Validator Task Broadcast...",
+    ];
+
+    setLogs(initialLogs);
+
+    const sequence = [
+      { text: "> [TASK RECEIVED] Source: LiveBench API | Category: Reasoning", delay: 1500, color: "text-brand-yellow" },
+      { text: "> Committing solution hash to chain...", delay: 2500, color: "" },
+      { text: "> Hash: 0x8f2a9...d31e", delay: 3000, color: "" },
+      { text: "// Wait for Reveal Window...", delay: 4500, color: "text-gray-500" },
+      { text: "> Revealing plain-text solution...", delay: 5500, color: "" },
+      { text: "> [SUCCESS] Validator confirmed structure.", delay: 6500, color: "text-brand-green" },
+    ];
+
+    const timeouts: NodeJS.Timeout[] = [];
+
+    sequence.forEach((step) => {
+      const timeout = setTimeout(() => {
+        setLogs(prev => [...prev, `<span class="${step.color}">${step.text}</span>`]);
+      }, step.delay);
+      timeouts.push(timeout);
+    });
+
+    const resetTimeout = setTimeout(() => {
+      setLogs([]);
+      setIsSimulating(false);
+      setTimeout(() => setIsSimulating(true), 100);
+    }, 9000);
+
+    timeouts.push(resetTimeout);
+
+    return () => timeouts.forEach(clearTimeout);
+  }, [isSimulating]);
+
+  const architectureDiagram = `
+    graph TD
+      classDef val fill:#fde047,stroke:#121212,stroke-width:4px,color:#121212,font-weight:bold
+      classDef miner fill:#3b82f6,stroke:#121212,stroke-width:4px,color:#fff,font-weight:bold
+      classDef chain fill:#ef4444,stroke:#121212,stroke-width:4px,color:#fff,font-weight:bold
+
+      Val[Validator: Task Generator]:::val -->|Broadcast Synapse| Miner[Miner Pool]:::miner
+      Miner -->|Commit Hash| Chain[Bittensor Chain]:::chain
+      Miner -->|Reveal Solution| Val
+      Val -->|Score & Set Weights| Chain
+      Val -.->|Cross-Check| OtherVals[Other Validators]:::val
+  `;
+
+  return (
+    <div className="min-h-screen pb-24 font-sans selection:bg-brand-yellow selection:text-black">
+      {/* Navigation */}
+      <nav className="border-b-4 border-black bg-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-brand-red border-2 border-black flex items-center justify-center brutal-shadow-hover">
+                <Flame size={20} className="text-white" />
+              </div>
+              <span className="font-bold text-xl tracking-tight uppercase">OpenArena</span>
+            </div>
+            <div className="flex space-x-4">
+              <Link href="https://kaggleingest.com" target="_blank" className="hidden md:flex font-bold px-4 py-2 border-2 border-black bg-brand-yellow brutal-shadow-hover hover:-translate-y-1 items-center justify-center">
+                KaggleIngest Portal
+              </Link>
+              <Link href="/whitepaper" className="font-bold px-4 py-2 border-2 border-black bg-black text-white brutal-shadow-hover hover:-translate-y-1 flex items-center justify-center">
+                Read Whitepaper
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-24">
+        {/* Hero Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-block px-4 py-2 bg-brand-yellow border-4 border-black font-bold mb-6 brutal-shadow rotate-1 transform">
+              #1 BITTENSOR IDEATHON SUBMISSION
+            </div>
+            <h1 className="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tighter uppercase relative">
+              The Truth <br />
+              <span className="text-white text-shadow-solid relative inline-block">
+                Machine
+                <span className="absolute inset-0 text-white text-shadow-[4px_4px_0_#121212] -z-10">Machine</span>
+              </span> <br />
+              For AI.
+            </h1>
+            <p className="text-xl md:text-2xl font-medium mb-8 border-l-8 border-brand-red pl-6 py-2 bg-white brutual-border p-4 shadow-[4px_4px_0_#121212]">
+              Static benchmarks are dead. Models memorize the test set. We built the first decentralized adversarial evaluation protocol to score <span className="font-bold underline decoration-brand-blue decoration-4">generalization</span>, not memorization.
+            </p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link href="#network" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-brand-blue text-white brutal-shadow brutal-shadow-hover">
+                <Terminal size={24} />
+                <span>View Live Network</span>
+              </Link>
+              <Link href="https://youtube.com" target="_blank" className="flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-white brutal-shadow brutal-shadow-hover">
+                <Play size={24} />
+                <span>Watch Demo</span>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Hero Graphic / Code Window */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="border-4 border-black bg-[#1E1E1E] brutal-shadow overflow-hidden flex flex-col h-[500px]"
+          >
+            <div className="bg-black text-white px-4 py-2 flex items-center justify-between border-b-4 border-black">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 rounded-full bg-brand-red border border-white"></div>
+                <div className="w-3 h-3 rounded-full bg-brand-yellow border border-white"></div>
+                <div className="w-3 h-3 rounded-full bg-brand-green border border-white"></div>
+              </div>
+              <span className="font-mono text-sm font-bold text-gray-400">mining_loop.rs</span>
+            </div>
+            <div className="p-6 font-mono text-sm md:text-md text-green-400 overflow-y-auto flex-1 h-full">
+              <AnimatePresence>
+                {logs.map((log, i) => (
+                  <motion.p
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="mb-2"
+                    dangerouslySetInnerHTML={{ __html: log }}
+                  />
+                ))}
+              </AnimatePresence>
+              <p className="text-white animate-pulse mt-2">_</p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* The Protocol Section */}
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-6xl font-black uppercase mb-12 text-center border-b-8 border-black pb-4 inline-block mx-auto">
+            How The Protocol Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 border-4 border-black brutal-shadow brutal-shadow-hover">
+              <div className="w-16 h-16 bg-brand-yellow border-4 border-black flex items-center justify-center mb-6 brutal-shadow transform -rotate-3">
+                <Database size={32} />
+              </div>
+              <h3 className="text-2xl font-black uppercase mb-4">1. Livebench Task Generation</h3>
+              <p className="text-lg font-medium">Validators act as &quot;Game Masters,&quot; pulling verified, contamination-free tasks from the <strong>LiveBench</strong> dataset every epoch. No static datasets. No memorization.</p>
+            </div>
+            <div className="bg-white p-8 border-4 border-black brutal-shadow brutal-shadow-hover">
+              <div className="w-16 h-16 bg-brand-blue text-white border-4 border-black flex items-center justify-center mb-6 brutal-shadow transform rotate-3">
+                <Cpu size={32} />
+              </div>
+              <h3 className="text-2xl font-black uppercase mb-4">2. Miner Inference Loop</h3>
+              <p className="text-lg font-medium">Miners receive the prompt and must instantly generalize. We utilize a cryptographic Commit-Reveal scheme to prevent front-running.</p>
+            </div>
+            <div className="bg-white p-8 border-4 border-black brutal-shadow brutal-shadow-hover">
+              <div className="w-16 h-16 bg-brand-green text-black border-4 border-black flex items-center justify-center mb-6 brutal-shadow">
+                <ShieldAlert size={32} />
+              </div>
+              <h3 className="text-2xl font-black uppercase mb-4">3. Brier Scoring Consensus</h3>
+              <p className="text-lg font-medium">Validators grade solutions using strict Brier Scores that penalize &quot;hallucination&quot; and heavily reward well-calibrated confidence and correctness.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Architecture Section */}
+        <div className="mb-24 bg-white border-4 border-black brutal-shadow p-8">
+          <h2 className="text-3xl md:text-4xl font-black uppercase mb-8 text-center bg-brand-yellow inline-block px-4 py-2 border-4 border-black transform -rotate-1 brutal-shadow">
+            System Architecture
+          </h2>
+          <div className="w-full overflow-x-auto">
+            <Mermaid chart={architectureDiagram} />
+          </div>
+        </div>
+
+        {/* Live Dashboard/Leaderboard Section */}
+        <div id="network" className="mb-24 scroll-mt-24">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase mb-2">Live Miner Leaderboard</h2>
+              <p className="text-xl font-bold bg-black text-white px-3 py-1 inline-block">Epoch 4829 • Generalization Score (S)</p>
+            </div>
+            <div className="flex space-x-2 mt-4 md:mt-0">
+              <button
+                onClick={() => setActiveTab('live')}
+                className={`px-6 py-2 font-bold border-4 border-black brutal-shadow-hover ${activeTab === 'live' ? 'bg-brand-red text-white' : 'bg-white'}`}
+              >
+                Top Miners
+              </button>
+              <button
+                onClick={() => setActiveTab('validators')}
+                className={`px-6 py-2 font-bold border-4 border-black brutal-shadow-hover ${activeTab === 'validators' ? 'bg-brand-yellow text-black' : 'bg-white'}`}
+              >
+                Validators
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white border-4 border-black brutal-shadow overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[800px]">
+                <thead>
+                  <tr className="bg-black text-white text-lg font-bold uppercase border-b-4 border-black">
+                    <th className="p-4 border-r-4 border-black">Rank</th>
+                    <th className="p-4 border-r-4 border-black">Miner UID / Coldkey</th>
+                    <th className="p-4 border-r-4 border-black bg-brand-blue text-white">Generalization (S)</th>
+                    <th className="p-4 border-r-4 border-black">Accuracy</th>
+                    <th className="p-4">Calibration</th>
+                  </tr>
+                </thead>
+                <tbody className="font-mono text-lg font-medium">
+                  {[
+                    { rank: 1, uid: "4091", key: "5HeR...x9P", score: "0.942", acc: "96.4%", cal: "0.02 Brier", bg: "bg-brand-yellow" },
+                    { rank: 2, uid: "882", key: "5Ca1...yZ2", score: "0.915", acc: "94.1%", cal: "0.05 Brier", bg: "bg-white" },
+                    { rank: 3, uid: "1104", key: "5Ff9...kK1", score: "0.889", acc: "90.2%", cal: "0.08 Brier", bg: "bg-white" },
+                    { rank: 4, uid: "77", key: "5Jj2...pQ8", score: "0.851", acc: "88.7%", cal: "0.11 Brier", bg: "bg-gray-100" },
+                    { rank: 5, uid: "305", key: "5Oo4...rR5", score: "0.812", acc: "85.0%", cal: "0.15 Brier", bg: "bg-gray-100" },
+                  ].map((row, i) => (
+                    <tr key={i} className={`border-b-4 border-black hover:bg-gray-200 transition-colors ${row.bg}`}>
+                      <td className="p-4 border-r-4 border-black font-black text-xl text-center">{row.rank}</td>
+                      <td className="p-4 border-r-4 border-black flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-full border-2 border-black bg-gradient-to-tr from-brand-red to-brand-yellow"></div>
+                        <span>UID: {row.uid} <span className="text-sm text-gray-500">[{row.key}]</span></span>
+                      </td>
+                      <td className="p-4 border-r-4 border-black text-brand-blue font-black">{row.score}</td>
+                      <td className="p-4 border-r-4 border-black text-green-600 font-bold">{row.acc}</td>
+                      <td className="p-4 text-brand-red font-bold">{row.cal}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* KaggleIngest Promo */}
+        <div className="bg-brand-red text-white border-4 border-black brutal-shadow p-8 md:p-12 mb-24 relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-8 opacity-20 transform rotate-12">
+            <Users size={120} />
+          </div>
+          <div className="relative z-10 max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-black uppercase mb-6">The Unfair Advantage:<br/>KaggleIngest</h2>
+            <p className="text-xl font-medium mb-8">
+              Most subnets fail because they lack skilled miners. We solve this by bridging the 15M+ data scientists from Kaggle directly into the OpenArena ecosystem.
+            </p>
+            <div className="bg-black p-4 inline-flex items-center space-x-4 border-4 border-white brutal-shadow transform -rotate-2">
+              <span className="font-mono text-brand-yellow font-bold text-lg">{`!pip install openarena-kaggle`}</span>
+              <CheckCircle2 className="text-brand-green" />
+            </div>
+            <p className="mt-6 text-lg font-bold underline decoration-brand-yellow decoration-4 underline-offset-4">Cold Start Solved. Instant liquidity of intelligence.</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  );
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/app/whitepaper/page.tsx
+================================================
+import fs from 'fs';
+import path from 'path';
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
+import { ArrowLeft } from 'lucide-react';
+import Mermaid from '../../components/Mermaid';
+import 'katex/dist/katex.min.css';
+
+export default function WhitepaperPage() {
+  const filePath = path.join(process.cwd(), 'src/content/whitepaper.md');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+
+  return (
+    <div className="min-h-screen pb-24 font-sans selection:bg-brand-yellow selection:text-black">
+      {/* Navigation */}
+      <nav className="border-b-4 border-black bg-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <Link href="/" className="flex items-center space-x-2 brutal-shadow-hover hover:-translate-x-1">
+              <div className="w-8 h-8 bg-brand-red border-2 border-black flex items-center justify-center">
+                <ArrowLeft size={20} className="text-white" />
+              </div>
+              <span className="font-bold text-xl tracking-tight uppercase">Back to Arena</span>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-16">
+        <div className="bg-white border-4 border-black brutal-shadow p-8 md:p-12 prose prose-lg prose-black max-w-none">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeRaw, rehypeKatex]}
+            components={{
+              code({ inline, className, children, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { inline?: boolean }) {
+                const match = /language-(\w+)/.exec(className || '');
+                if (!inline && match && match[1] === 'mermaid') {
+                  return <Mermaid chart={String(children).replace(/\n$/, '')} />;
+                }
+                return !inline ? (
+                  <pre className="bg-black text-green-400 p-4 font-mono text-sm overflow-x-auto brutal-shadow">
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  </pre>
+                ) : (
+                  <code className="bg-gray-200 px-1 py-0.5 rounded text-sm text-red-600" {...props}>
+                    {children}
+                  </code>
+                );
+              }
+            }}
+          >
+            {fileContent}
+          </ReactMarkdown>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link href="/" className="inline-flex items-center justify-center space-x-2 font-black text-lg px-8 py-4 border-4 border-black bg-brand-yellow text-black brutal-shadow brutal-shadow-hover">
+            <span>Return to Home</span>
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/components/Mermaid.tsx
+================================================
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
+import mermaid from 'mermaid';
+
+export default function Mermaid({ chart }: { chart: string }) {
+  const svgId = React.useId().replace(/:/g, '');
+  const [svg, setSvg] = useState<string>('');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'var(--font-space-mono)',
+        primaryColor: '#fde047',
+        primaryBorderColor: '#121212',
+        primaryTextColor: '#121212',
+        secondaryColor: '#ef4444',
+        tertiaryColor: '#3b82f6',
+        lineColor: '#121212',
+      },
+      flowchart: {
+        htmlLabels: true,
+        curve: 'stepAfter',
+      }
+    });
+
+    const renderChart = async () => {
+      if (containerRef.current) {
+        try {
+          const { svg } = await mermaid.render(svgId, chart);
+          setSvg(svg);
+        } catch (error) {
+          console.error('Mermaid rendering failed', error);
+        }
+      }
+    };
+
+    renderChart();
+  }, [chart, svgId]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="mermaid-container flex justify-center w-full"
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  );
+}
+
+
+
+================================================
+FILE: openarena/frontend/src/content/whitepaper.md
+================================================
+# OpenArena: The Decentralized Adversarial Evaluation Protocol
+
+**"The Proof of Intelligence"**
+
+> [!IMPORTANT]
+> **Core Thesis**: Static benchmarks are dead. Intelligence is not the ability to memorize a fixed dataset; it is the ability to generalize to new, unseen distributions. OpenArena is a continuous, adversarial stress-test for AI models, turning evaluation into a verifiable digital commodity.
+
+---
+
+## 1. Introduction: The Crisis of Evaluation
+
+Modern AI has a **Goodhart's Law** problem: "When a measure becomes a target, it ceases to be a good measure."
+
+- **Contamination**: Public datasets (GSM8K, MMLU) leak into training data.
+- **Saturation**: Top models score 90%+ on benchmarks but fail in production.
+- **Trust**: Who validates the validator?
+
+**OpenArena** solves this by creating a **Dynamic Adversarial Evaluation Game**.
+
+- **Validators** draw from **LiveBench** every epoch (a continuously updated stream of verifiable, objective ground-truth questions across math, coding, and reasoning).
+- **Miners** must solve these unseen tasks instantly.
+- **Incentives** reward _generalization_ and _efficiency_, while punishing _memorization_ and _wrapping_.
+
+### 1.1 Core Thesis: Proof of Intelligence
+
+We define "Intelligence" not as knowledge retrieval, but as **Generalization Efficiency**:
+
+> _The ability to solve novel, high-entropy tasks with minimum latency and compute._
+
+This shift allows us to distinguish between a 100B parameter model that memorized the internet and a 7B parameter model that can actually _reason_.
+
+---
+
+## 2. Technical Architecture
+
+### 2.1 The Flow of Intelligence
+
+```mermaid
+sequenceDiagram
+    participant V as Validator (Game Master)
+    participant M as Miner (Solver)
+    participant C as Chain (Bittensor)
+
+    Note over V, M: Epoch N Starts (Block 0-360)
+
+    rect rgb(20, 20, 20)
+        Note right of V: 1. Generate Dynamic Task<br/>(e.g. "Solve random math puzzle")
+        V->>V: Hash(Task) + Encrypt(GroundTruth)
+        V->>M: Broadcast Synapse (Task Only)
+    end
+
+    rect rgb(40, 40, 40)
+        Note right of M: 2. Compute Solution<br/>(LLM Inference / Code Exec)
+        M->>M: Hash(Answer + Salt)
+        M->>C: Commit Hash (Prevents Front-running)
+    end
+
+    rect rgb(20, 20, 20)
+        Note right of V: 3. Reveal Phase
+        M->>V: Reveal Answer
+        V->>V: Verify Hash matches Commit
+        V->>V: Score(Answer, GroundTruth)
+    end
+
+    rect rgb(60, 20, 20)
+        Note right of C: 4. Yuma Consensus
+        V->>C: Set Weights (W_i)
+        C->>M: Distribute TAO Rewards
+    end
+```
+
+### 2.2 Component Roles
+
+| Role          | Responsibility                                                                     | Incentive                                                                        |
+| :------------ | :--------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
+| **Miner**     | Solve arbitrary tasks (Text, Code, Math) with high accuracy and low latency.       | Maximizes Reward ($R$) by optimizing inference speed and model generalization.   |
+| **Validator** | Generate high-entropy, non-repeatable tasks. Evaluate miner solutions objectively. | Maximizes Dividends ($D$) by attracting high-quality miners and staking support. |
+
+---
+
+## 3. Incentive Mechanism (The Math)
+
+The core innovation is the **Generalization Score ($S$)**.
+
+### 3.1 The Scoring Function
+
+For a set of $N$ tasks in an epoch, a miner $i$'s score $S_i$ is:
+
+$$ S*i = \underbrace{\alpha \cdot \frac{1}{N} \sum*{j=1}^{N} \text{Acc}(y\*{ij}, y^\*_{j})}*{\text{Accuracy}} \times \underbrace{\beta \cdot \text{Cal}(c*{ij}, \text{Acc}*{ij})}*{\text{Calibration}} - \underbrace{\gamma \cdot \text{Lat}(t_{ij})}\*{\text{Latency Penalty}} $$
+
+Where:
+
+- $\text{Acc}(y_{ij}, y^*_{j})$: Accuracy metric (0 or 1 for exact match, or Levenshtein/BLEU for text).
+- $\text{Cal}$: **Calibration Score**. Rewards miners who are confident when correct and uncertain when wrong (using Brier Score or Log Loss).
+- $\text{Lat}$: **Latency Penalty**. $e^{t_{ij} - T_{max}}$.
+
+### 3.2 Yuma Consensus & Weight Setting
+
+Validators normalize scores to a weight vector $W$:
+$$ w*{i} = \frac{e^{S_i / \tau}}{\sum*{k} e^{S_k / \tau}} $$
+*(Using Softmax with temperature $\tau$ to control competition intensity)\*.
+
+---
+
+## 4. Adversarial Hardening (How We Win)
+
+### 🛡️ Challenge 1: Memorization / Lookup
+
+- **Attack**: Miners cache answers from previous epochs.
+- **Defense**: **LiveBench Data Pipeline**.
+  - _Continuous Updates_: LiveBench releases new questions regularly.
+  - _Contamination Free_: New questions are delayed from public release ensuring models cannot pre-train on them.
+  - _Objective Truth_: Each question has verifiable ground-truth answers (math, code, data analysis) eliminating subjective LLM Judges.
+
+### 🛡️ Challenge 2: Front-Running / Copying
+
+- **Attack**: Fast miner sees a smart miner's answer in the mempool and copies it.
+- **Defense**: **Commit-Reveal Scheme**.
+  1.  Miner submits `Hash(Answer + Salt)`.
+  2.  After window closes, Miner submits `Answer + Salt`.
+  3.  Validator verifies hash matches.
+
+### 🛡️ Challenge 3: Validator Collusion
+
+- **Attack**: Validator shares Ground Truth with a specific miner.
+- **Defense**: **Cross-Validation**.
+  - Multiple validators score the same miner.
+  - If Validator A's scores diverge significantly from the consensus media (Yuma Consensus), Validator A loses V-Trust and dividends.
+
+---
+
+## 5. Token Economics (The OpenArena Flywheel)
+
+### 5.1 The Formal Value Loop ($V$)
+
+Let $F$ be the fee paid by an enterprise (e.g., Anthropic) to prioritize a specific evaluation dataset $D_{target}$.
+
+$$ F*{distribution} = 0.4 \cdot F*{burn} + 0.4 \cdot F*{validators} + 0.2 \cdot F*{miners} $$
+
+1.  **Burn ($40\%$)**: Permanently removed from supply, creating deflationary pressure on $\tau$.
+2.  **Validator Reward ($40\%$)**: Distributed to validators proportional to their stake ($S_v$) and their **Curator Score** ($C_v$).
+3.  **Miner Reward ($20\%$)**: Distributed to miners who solve $D_{target}$ with the highest **Generalization Score** ($G_m$).
+
+### 5.2 The Enterprise Demand Flywheel
+
+As enterprises pay $F$ to access the network:
+
+1.  **Demand** for TAO increases (to pay fees).
+2.  **Supply** of TAO decreases (via Burn).
+3.  **Validator Yield** increases (via Dividend).
+4.  **Miner Competition** increases (via Reward).
+
+This creates a self-reinforcing loop where **Utility** drives **Security** and **Valuation**.
+
+This ensures that **Enterprise Demand** directly correlates with **Miner Profitability** and **Token Scarcity**.
+
+---
+
+## 6. Security Analysis (Adversarial Robustness)
+
+### 6.1 Attack: Pre-Computation (The "Lookup Table")
+
+- **Vector**: Miner pre-calculates answers to known datasets to simulate intelligence.
+- **Mitigation**: **Private LiveBench Release Schedule**.
+  - LiveBench limits potential contamination by releasing new questions regularly.
+  - To further reduce contamination, LiveBench delays publicly releasing the questions from the most-recent updates.
+  - Validators pull from the _private_ LiveBench API tier, guaranteeing that the questions evaluated in the subnet are fundamentally un-indexed by any public model training pipeline.
+
+### 6.2 Attack: Validator Laziness (Low Entropy)
+
+- **Vector**: A Validator reuses old tasks to save compute, degrading the network's measurement quality.
+- **Mitigation**: **Entropy Penalty ($E_v$)**.
+  - We measure the Kullback-Leibler (KL) divergence between task distributions at time $t$ and $t-1$:
+    $$ E*v = D*{KL}(P*t \parallel P*{t-1}) $$
+  - If $E_v < \epsilon_{threshold}$ (statistically indistinguishable from previous epoch), the Validator's weight-setting power $W_v$ is slashed:
+    $$ W*v^{new} = W_v^{old} \cdot (1 - \text{Penalty}*{lazy}) $$
+- **Incentive**: **Difficulty Rating ($D_t$)**.
+  - Validators are rewarded for generating tasks that separate miner performance.
+  - If all miners score 100%, $D_t$ is low -> Validator reward reduced.
+  - If no miner scores > 0%, $D_t$ is too high -> Validator reward reduced.
+  - Optimal $D_t$ targets a Gaussian distribution of miner scores.
+
+### 6.3 Attack: Front-Running (The "Copycat")
+
+- **Mitigation**: **Commit-Reveal** (as defined in Section 4).
+  - $t_0$: Miner submits $H = \text{SHA256}(Answer + Salt)$.
+  - $t_1$: Reveal window opens.
+  - Copycats only see hash $H$, preventing answer theft.
+
+---
+
+## 7. Go-To-Market & Integration (KaggleIngest)
+
+We leverage **KaggleIngest** to visualize this war zone.
+
+- **Leaderboard**: Real-time display of Miner Generalization Scores.
+- **Museum**: Archive of "Hardest Tasks" (a valuable dataset).
+
+---
+
+## 6. Execution Roadmap (Round II Strategy)
+
+### Phase 1: The "Stub" (Days 1-5)
+
+- [ ] Implement `neurons/validator.py`: Basic task generation (Math/Logic).
+- [ ] Implement `neurons/miner.py`: Basic OpenAI/Llama wrapper.
+- [ ] Implement `commt-reveal` mechanism on-chain (using mock chain).
+
+### Phase 2: The "Arena" (Days 6-12)
+
+- [ ] Connect KaggleIngest frontend to Subnet stats.
+- [ ] Deploy 5 Miner nodes (simulated) to show competition.
+- [ ] Create visualization of "Score Drift" over time.
 
 
 

@@ -11,6 +11,8 @@
 
 ## 🏛️ Overview
 
+**Live Demo**: [https://openarena.kaggleingest.com](https://openarena.kaggleingest.com)
+
 **OpenArena** is a decentralized, adversarial benchmarking platform built on **Bittensor**. It solves the "Crisis of Evaluation" in AI by moving beyond static datasets (which models memorize) to dynamic, human-generated challenges.
 
 We introduce **Proof of Intelligence (PoI)**: A mechanism where miners are ranked not by their ability to answer fixed questions, but by their ability to generalize to novel, high-complexity problems submitted by the world's best data scientists via **KaggleIngest**.
