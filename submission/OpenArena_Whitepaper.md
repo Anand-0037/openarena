@@ -195,11 +195,11 @@ Most subnets fail because they cannot attract talent. We solve this by meeting m
 
 ## 6. Execution Roadmap (Round II Strategy)
 
-### Phase 1: The "Stub" (Days 1-5)
+### Phase 1: The "Stub" (Completed)
 
-- [ ] Implement `neurons/validator.py`: Basic task generation (Math/Logic).
-- [ ] Implement `neurons/miner.py`: Basic OpenAI/Llama wrapper.
-- [ ] Implement `commt-reveal` mechanism on-chain (using mock chain).
+- [x] Implement `neurons/validator.py`: Basic task generation (Math/Logic).
+- [x] Implement `neurons/miner.py`: Basic OpenAI/Llama wrapper.
+- [x] Implement `commit-reveal` mechanism on-chain (using mock chain).
 
 ### Phase 2: The "Arena" (Days 6-12)
 

@@ -44,11 +44,18 @@ class Miner:
         bt.logging.info(f"Received synapse from: {synapse.dendrite.hotkey} | Phase: {synapse.phase}")
 
         if synapse.phase == "commit":
-            # 1. Generate Answer (Real LLM Inference)
+            # 1. Generate Answer (Hybrid Logic: Math + LLM)
             try:
-                inputs = self.tokenizer(synapse.query, return_tensors="pt").to(self.device)
-                outputs = self.model.generate(**inputs, max_new_tokens=50, pad_token_id=self.tokenizer.eos_token_id)
-                answer = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+                # Basic Math Resolver for speed (demo purpose)
+                if "Solve this math problem:" in synapse.query:
+                    problem = synapse.query.split(":")[1].strip()
+                    answer = str(eval(problem))
+                    bt.logging.info(f"Solved math problem internally: {answer}")
+                else:
+                    # Fallback to LLM
+                    inputs = self.tokenizer(synapse.query, return_tensors="pt").to(self.device)
+                    outputs = self.model.generate(**inputs, max_new_tokens=50, pad_token_id=self.tokenizer.eos_token_id)
+                    answer = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
             except Exception as e:
                 bt.logging.error(f"Inference failed: {e}")
                 answer = "Error during inference"

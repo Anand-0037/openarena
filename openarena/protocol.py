@@ -4,12 +4,13 @@ import pydantic
 
 class GeneralizationTask(bt.Synapse):
     """
-    The GeneralizationTask Synapse.
+    GeneralizationTask Synapse for the OpenArena protocol.
 
-    Validators send this to Miners with a 'query' and a 'phase'.
-    Miners respond based on the phase:
-    - 'commit': Return 'commitment' (hash).
-    - 'reveal': Return 'answer' and 'salt'.
+    This synapse facilitates a TWO-PHASE Commit-Reveal protocol:
+    1. COMMIT PHASE: The Miner generates a solution but only shares a cryptographic hash (commitment)
+       to prevent weight-copying and front-running in the peer-to-peer mempool.
+    2. REVEAL PHASE: The Miner reveals the plaintext solution and the secret salt used for the commitment.
+       The Validator then verifies the hash and scores the solution.
     """
 
     # The Challenge

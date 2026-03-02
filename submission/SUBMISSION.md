@@ -1,7 +1,9 @@
 # OpenArena: The Proof of Intelligence Subnet
 
-**Team**: OpenArena (Anand / KaggleIngest)
+**Team**: OpenArena (Anand)
 **Track**: Bittensor Ideathon
+**Live Demo**: [https://openarena.kaggleingest.com](https://openarena.kaggleingest.com)
+**GitHub**: [https://github.com/Anand-0037/openarena](https://github.com/Anand-0037/openarena)
 
 ## Abstract
 
@@ -33,11 +35,11 @@ The rigorous mathematical definition of our scoring function: $S = \text{Accurac
 
 We have successfully simulated the subnet lifecycle, including adversarial scenarios.
 
-- **[Source Code](OpenArena_SourceCode.tar.gz)**: Full Python implementation of Miners, Validators, and Protocol.
+- **Source Code**: Full Python implementation of Miners, Validators, and Protocol (available in this repository).
 - **Simulation Results**: `demo.py` demonstrates:
-  - **Honest Miners**: Converge to high weights.
-  - **Front-Runners**: Slashed to zero (proven via simulation logs).
-  - **Lazy Miners**: Penalized for low accuracy.
+  - **Honest Miners**: Converge to high weights through consistent accuracy and calibration.
+  - **Front-Runners**: Slashed to zero due to the Commit-Reveal barrier (proven via simulation logs).
+  - **Lazy Miners**: Penalized for low accuracy and high Brier scores.
 
 ## Go-To-Market
 

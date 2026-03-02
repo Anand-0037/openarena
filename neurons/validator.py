@@ -1,6 +1,7 @@
 import bittensor as bt
 import time
 import hashlib
+import random
 from openarena.protocol import GeneralizationTask
 from openarena.utils.crypto import verify_commitment
 
@@ -25,7 +26,9 @@ class Validator:
     def run(self):
         bt.logging.info("Starting validator loop...")
 
+        step = 0
         while True:
+            step += 1
             try:
                 # 1. Generate Task (Entropy Protocol)
                 # VRF: Hash(BlockHeight + ValidatorKey + PrevBlockHash)
@@ -40,10 +43,16 @@ class Validator:
                 bt.logging.info(f"Generated Entropy Seed: {entropy_seed}")
                 bt.logging.info(f"Derivation: SHA256({block_height} + {vrf_key[:8]}... + {prev_block_hash[:8]}...)")
 
-                # In production, this seed drives the Task Generator.
-                # For this stub, we use a simple string reversal, but the seed is ready.
-                query = f"Task_{step}_{entropy_seed[:8]}: Reverse this string"
-                bt.logging.info(f"\n--- Step {step}: {query} ---")
+                # 2. Generate Adversarial Task (Procedural)
+                # We use the entropy seed to generate a deterministic math problem
+                random.seed(int(entropy_seed[:8], 16))
+                a = random.randint(100, 999)
+                b = random.randint(10, 99)
+                op = random.choice(['+', '*', '-'])
+                query = f"Solve this math problem: {a} {op} {b}"
+                expected_answer = str(eval(f"{a} {op} {b}"))
+
+                bt.logging.info(f"\n--- Epoch Task: {query} ---")
 
                 # Filter miners (mock: select top 10 or random)
                 # For this stub, we just query all available axons in the metagraph
@@ -108,13 +117,11 @@ class Validator:
                     is_valid = verify_commitment(commitment, answer, salt, hotkey)
                     if is_valid:
                         bt.logging.success(f"Miner {hotkey} VERIFIED! Answer: {answer}")
-                        # Score: Check if answer is correct (reverse string)
-                        # Mock Logic:
-                        expected = query[::-1]
-                        if answer == expected:
+                        # Score: Check if answer is correct
+                        if str(answer).strip() == expected_answer:
                             bt.logging.success(f"Miner {hotkey} CORRECT!")
                         else:
-                            bt.logging.info(f"Miner {hotkey} WRONG Answer.")
+                            bt.logging.info(f"Miner {hotkey} WRONG Answer (Expected {expected_answer}, got {answer}).")
                     else:
                         bt.logging.error(f"Miner {hotkey} CHEATING attempt! Hash mismatch.")
 

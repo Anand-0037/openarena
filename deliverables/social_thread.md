@@ -41,6 +41,6 @@ Trustless. Decentralized. Brutally honest.
 **Post 6**
 We are submitting OpenArena to the @bittensor\_ Ideathon.
 Because the world needs a "Truth Machine" for AI Intelligence.
-Read the Whitepaper & check the git: [Link]
+Read the Whitepaper & check the git: https://github.com/Anand-0037/openarena
 Let the games begin. ⚔️
 #Bittensor #AI #DeAI #MachineLearning #OpenSource

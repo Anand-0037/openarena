@@ -10,6 +10,12 @@ venv/
 .DS_Store
 *.log
 digest.txt
+dashboard.html
+todo-for-me.txt
+winning-strategy.md
+winning-strategy.md.resolved
+submission/
+deliverables/
 
 # Ignored tracking files
 todo-for-me.txt
